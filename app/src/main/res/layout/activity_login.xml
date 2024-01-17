@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="24dp"
+            android:visibility="visible"
             android:orientation="vertical">
 
             <TextView
@@ -34,10 +35,33 @@
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/googleg_standard_color_18" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="24dp"
+                    android:text="Google account" />
+            </LinearLayout>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp"
+                android:visibility="gone"
                 android:layout_margin="8dp">
 
                 <LinearLayout
@@ -86,6 +110,7 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:foreground="@drawable/button_foreground_8dp"
                 android:background="@drawable/green_round_button_background"
                 android:text="@string/action_sign_in_short" />
@@ -96,6 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
+                android:visibility="gone"
                 android:text="or" />
 
             <Button
@@ -106,6 +132,7 @@
                 android:textColor="@color/black"
                 android:clickable="true"
                 android:focusable="true"
+                android:visibility="gone"
                 android:background="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

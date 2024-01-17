@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "398272732268",
+    "project_id": "pets-smart-hub",
+    "storage_bucket": "pets-smart-hub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398272732268:android:d5bba7065a8cbebe6b4c49",
+        "android_client_info": {
+          "package_name": "com.serhiymysyshyn.smartpethubapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398272732268-juokm42p191j5h5ab698q8ce9gkkcuh6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.serhiymysyshyn.smartpethubapplication",
+            "certificate_hash": "94b1d7e5ee969190a64537b52291595a1476a248"
+          }
+        },
+        {
+          "client_id": "398272732268-kde2q30b76dncllgdna62arh5cigpt6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOCTCXFEJQnus7JIPuuwfA5sgmPwRzsAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398272732268-kde2q30b76dncllgdna62arh5cigpt6c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

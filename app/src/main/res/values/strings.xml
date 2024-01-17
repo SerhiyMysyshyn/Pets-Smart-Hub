@@ -44,5 +44,6 @@
     <string name="hub_sensors_data">Smart Hub sensors data</string>
     <string name="air_quality">Air\nquality</string>
 
+    <string name="sign_in_with_google">Google account</string>
 
 </resources>

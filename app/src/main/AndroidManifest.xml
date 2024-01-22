@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".PetsSmartHubApplication"
         android:allowBackup="true"
@@ -12,9 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPetHubApplication"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ErrorActivity"
+            android:name=".ui.greeting.GreetingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.error.ErrorActivity"
             android:exported="false" />
         <activity
             android:name=".ui.registration.RegisterActivity"
@@ -44,9 +50,7 @@
             android:name=".ui.main.MainActivity"
             android:exported="true"
             android:noHistory="true"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

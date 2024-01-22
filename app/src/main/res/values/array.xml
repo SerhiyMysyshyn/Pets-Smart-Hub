@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="greetingsTitleValues">
+        <item>@string/welcome_to_app</item>
+        <item>@string/smart_hub_reliable_friend</item>
+        <item>@string/robl_personal_assistant</item>
+        <item>@string/lets_get_started</item>
+    </string-array>
+
+    <string-array name="greetingsContentValues">
+        <item>@string/slide1</item>
+        <item>@string/slide2</item>
+        <item>@string/slide3</item>
+        <item>@string/slide4</item>
+    </string-array>
+
+</resources>

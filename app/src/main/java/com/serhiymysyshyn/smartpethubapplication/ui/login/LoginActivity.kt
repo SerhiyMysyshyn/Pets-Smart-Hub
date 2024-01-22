@@ -3,11 +3,13 @@ package com.serhiymysyshyn.smartpethubapplication.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.serhiymysyshyn.smartpethubapplication.databinding.ActivityLoginBinding
 import com.serhiymysyshyn.smartpethubapplication.databinding.ActivityMainBinding
+import com.serhiymysyshyn.smartpethubapplication.ui.error.ErrorActivity
 import com.serhiymysyshyn.smartpethubapplication.ui.main.MainActivity
 import com.serhiymysyshyn.smartpethubapplication.ui.notification.NotificationViewModel
 import com.serhiymysyshyn.smartpethubapplication.ui.registration.RegisterActivity
@@ -24,17 +26,9 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
-        binding.registerButton.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+        binding.signInWithGoogleButton.setOnClickListener {
+            binding.loginProgressBar.visibility = View.VISIBLE
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
         }
-
-        binding.signInButton.setOnClickListener {
-            if(binding.loginEmailAddress.text.toString() == "test") {
-                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-            }
-        }
-
-        //binding.loginEmailAddress.text
-
     }
 }

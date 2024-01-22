@@ -7,8 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#DADADA</color>
     <color name="lime">#32CD32</color>
     <color name="red">#FF3D00</color>
+
+    <color name="main_red">#FB0056</color>
+
+    <color name="error_activity_background">#35b7eb</color>
+    <color name="greeting_activity_background">#6DCAFE</color>
+    <color name="greeting_activity_background2">#0C9AEA</color>
+
+
+
 
 
     <color name="background_main">#FF121212</color>

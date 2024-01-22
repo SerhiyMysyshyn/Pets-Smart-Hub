@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pets Smart Hub</string>
+    <string name="app_name">Smart Hub</string>
     <string name="title_home">Home</string>
     <string name="title_settings">Settings</string>
     <string name="title_notifications">Notifications</string>
@@ -14,7 +14,8 @@
 
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in with</string>
+    <string name="action_sign_in_to_continue">Sign in to continue</string>
+    <string name="action_sign_in_short">Sign in</string>
     <string name="action_register">Register</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
@@ -37,13 +38,28 @@
     <string name="feeding">Feeding</string>
     <string name="hub_camera">Hub camera</string>
     <string name="hub_settings">Hub settings</string>
-    <string name="pour_feed">Pour feed</string>
-    <string name="pour_water">Pour water</string>
+    <string name="pour_feed">Pour feed now</string>
+    <string name="pour_water">Pour water now</string>
     <string name="room_temperature">Room\ntemperature</string>
     <string name="water_temperature">Water\ntemperature</string>
     <string name="hub_sensors_data">Smart Hub sensors data</string>
     <string name="air_quality">Air\nquality</string>
+    <string name="add_new_hub">Add Smart Hub</string>
 
     <string name="sign_in_with_google">Google account</string>
+
+    <string name="next_string">Next</string>
+    <string name="lets_go">Let\'s go</string>
+
+<!-- Greeting activity data -->
+    <string name="welcome_to_app">Welcome to Smart Hub</string>
+    <string name="smart_hub_reliable_friend">Smart HUB - your reliable friend</string>
+    <string name="robl_personal_assistant">Robl - personal AI assistant</string>
+    <string name="lets_get_started">Let\'s get started</string>
+
+    <string name="slide1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="slide2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="slide3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="slide4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 
 </resources>

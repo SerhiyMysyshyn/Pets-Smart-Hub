@@ -2,11 +2,11 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:color="@color/lime"
+        android:color="@color/black"
         android:state_selected="true"
         android:state_checked="true"/>
 
     <item
-        android:color="@color/background_main"/>
+        android:color="@color/white"/>
 
 </selector>

@@ -3,8 +3,8 @@
 
     <item android:id="@android:id/background">
         <shape>
-            <corners android:radius="8dip" />
-            <solid android:color="@color/background_main" />
+            <corners android:radius="50dp" />
+            <solid android:color="@color/grey" />
         </shape>
     </item>
     <item android:id="@android:id/progress">
@@ -12,8 +12,8 @@
             android:clipOrientation="vertical"
             android:gravity="bottom" >
             <shape>
-                <corners android:radius="8dip" />
-                <solid android:color="@color/lime" />
+                <corners android:radius="50dp" />
+                <solid android:color="@color/main_background_darker" />
             </shape>
         </clip>
     </item>

@@ -6,9 +6,13 @@ import com.serhiymysyshyn.smartpethubapplication.cache.sharedPreferences.PrefsMa
 
 class SplashViewModel: ViewModel() {
     val isSavedUserExist: MutableLiveData<Boolean> = MutableLiveData()
+    val isFirstLaunch: MutableLiveData<Boolean> = MutableLiveData()
 
-    fun isSavedUserExist() {
-        isSavedUserExist.postValue(PrefsManager().isRememberUser())
+    fun isFirstLaunch() {
+        isFirstLaunch.postValue(PrefsManager().isFirstLaunch())
     }
 
+//    fun isSavedUserExist() {
+//        isSavedUserExist.postValue(PrefsManager().isRememberUser())
+//    }
 }

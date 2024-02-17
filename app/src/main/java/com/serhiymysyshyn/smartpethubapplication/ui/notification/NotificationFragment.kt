@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.serhiymysyshyn.smartpethubapplication.R
+import com.serhiymysyshyn.smartpethubapplication.databinding.FragmentNotificationBinding
+import com.serhiymysyshyn.smartpethubapplication.logic.core.PicassoHelper
 
 class NotificationFragment : Fragment() {
 
@@ -15,18 +17,21 @@ class NotificationFragment : Fragment() {
     }
 
     private lateinit var viewModel: NotificationViewModel
+    private lateinit var binding: FragmentNotificationBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_notification, container, false)
+        binding = FragmentNotificationBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(NotificationViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        PicassoHelper().loadDrawableToImageView(R.drawable.cat_comfort_temp, binding.imageView8)
     }
 
 }

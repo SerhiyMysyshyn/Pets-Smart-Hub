@@ -149,7 +149,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:foreground="@drawable/button_foreground_8dp"
-                    android:background="@drawable/green_round_button_background"
+                    android:background="@drawable/round_button_background_10dp"
                     android:text="@string/action_register" />
 
                 <TextView

@@ -16,6 +16,8 @@
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_to_continue">Sign in to continue</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="action_log_out_short">Log out</string>
+
     <string name="action_register">Register</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
@@ -26,6 +28,9 @@
     <string name="enter_username">Enter username</string>
     <string name="sign_in_title">Sign in to the account</string>
     <string name="register_title">Register new account</string>
+
+    <string name="settings_general">General settings</string>
+    <string name="settings_notification">Notification settings</string>
 
     <string name="smart_hub_name">Smart Hub 1</string>
     <string name="water_level">Water level</string>
@@ -40,10 +45,14 @@
     <string name="hub_settings">Hub settings</string>
     <string name="pour_feed">Pour feed now</string>
     <string name="pour_water">Pour water now</string>
-    <string name="room_temperature">Room\ntemperature</string>
+    <string name="room_temperature">Air\ntemperature</string>
+    <string name="room_humidity">Air\nhumidity</string>
     <string name="water_temperature">Water\ntemperature</string>
     <string name="hub_sensors_data">Smart Hub sensors data</string>
     <string name="air_quality">Air\nquality</string>
+    <string name="dangerous_gases">Dangerous gases in air</string>
+    <string name="dangerous_gases1">CO2\nin air</string>
+    <string name="dangerous_gases2">CO or CNG\nin air</string>
     <string name="add_new_hub">Add Smart Hub</string>
 
     <string name="sign_in_with_google">Google account</string>
@@ -51,7 +60,7 @@
     <string name="next_string">Next</string>
     <string name="lets_go">Let\'s go</string>
 
-<!-- Greeting activity data -->
+    <!-- Greeting activity data -->
     <string name="welcome_to_app">Welcome to Smart Hub</string>
     <string name="smart_hub_reliable_friend">Smart HUB - your reliable friend</string>
     <string name="robl_personal_assistant">Robl - personal AI assistant</string>

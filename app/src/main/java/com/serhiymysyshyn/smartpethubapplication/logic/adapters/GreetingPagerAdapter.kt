@@ -9,11 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.serhiymysyshyn.smartpethubapplication.R
+import com.serhiymysyshyn.smartpethubapplication.logic.core.PicassoHelper
 import java.util.Arrays
 
 class GreetingPagerAdapter internal constructor(private val context: Context) :
     RecyclerView.Adapter<GreetingPagerAdapter.ViewHolder>() {
-    var listOfImages: MutableList<Drawable> = ArrayList()
+    var listOfImages: MutableList<Int> = ArrayList()
     var listOfTitles: List<String> = ArrayList()
     var listOfContent: List<String> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,15 +23,16 @@ class GreetingPagerAdapter internal constructor(private val context: Context) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        listOfImages.add(context.resources.getDrawable(R.drawable.cat_dog_3))
-        listOfImages.add(context.resources.getDrawable(R.drawable.eating_dog_1))
-        listOfImages.add(context.resources.getDrawable(R.drawable.bot_1))
-        listOfImages.add(context.resources.getDrawable(R.drawable.cat_dog_1))
+        listOfImages.add(R.drawable.cat_dog_3)
+        listOfImages.add(R.drawable.eating_dog_1)
+        listOfImages.add(R.drawable.bot_1)
+        listOfImages.add(R.drawable.cat_dog_1)
 
         listOfTitles = Arrays.asList<String>(*context.resources.getStringArray(R.array.greetingsTitleValues))
         listOfContent = Arrays.asList<String>(*context.resources.getStringArray(R.array.greetingsContentValues))
 
-        holder.image.setImageDrawable(listOfImages[position])
+        //holder.image.setImageDrawable(listOfImages[position])
+        PicassoHelper().loadDrawableToImageView(listOfImages[position], holder.image)
         holder.title.text = listOfTitles[position]
         holder.content.text = listOfContent[position]
     }

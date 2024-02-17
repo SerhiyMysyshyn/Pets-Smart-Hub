@@ -4,6 +4,7 @@ enum class CustomTags {
     debug,
     info,
     splash,
-    login,
+    auth,
+    logout,
     connection
 }

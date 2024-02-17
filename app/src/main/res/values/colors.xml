@@ -10,16 +10,20 @@
     <color name="grey">#DADADA</color>
     <color name="lime">#32CD32</color>
     <color name="red">#FF3D00</color>
+    <color name="transparent">#00FFFFFF</color>
+
 
     <color name="main_red">#FB0056</color>
 
+    <color name="white_text">#FFFFFF</color>
+    <color name="black_text">#FF000000</color>
+
+    <color name="button_light">#0C9AEA</color>
+    <color name="button_white">#FFFFFF</color>
+
     <color name="error_activity_background">#35b7eb</color>
-    <color name="greeting_activity_background">#6DCAFE</color>
-    <color name="greeting_activity_background2">#0C9AEA</color>
-
-
-
-
+    <color name="main_background_light">#6DCAFE</color>
+    <color name="main_background_darker">#0C9AEA</color>
 
     <color name="background_main">#FF121212</color>
     <color name="navigation_bar_background">#FF2D2D2D</color>

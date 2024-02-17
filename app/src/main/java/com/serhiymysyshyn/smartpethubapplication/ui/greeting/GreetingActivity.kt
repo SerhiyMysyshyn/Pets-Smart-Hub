@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.serhiymysyshyn.smartpethubapplication.R
+import com.serhiymysyshyn.smartpethubapplication.cache.sharedPreferences.PrefsManager
 import com.serhiymysyshyn.smartpethubapplication.databinding.ActivityGreetingBinding
 import com.serhiymysyshyn.smartpethubapplication.logic.adapters.GreetingPagerAdapter
 import com.serhiymysyshyn.smartpethubapplication.ui.login.LoginActivity
@@ -59,7 +60,9 @@ class GreetingActivity : AppCompatActivity() {
                         binding.greetingNextButton.apply {
                             this.text = resources.getText(R.string.lets_go)
                             this.setOnClickListener {
+                                PrefsManager().setFirstLaunch(false)
                                 startActivity(Intent(this@GreetingActivity, LoginActivity::class.java))
+                                this@GreetingActivity.finish()
                             }
                         }
                     }

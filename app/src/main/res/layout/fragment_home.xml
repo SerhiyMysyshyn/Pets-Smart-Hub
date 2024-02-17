@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greeting_activity_background2"
+    android:background="@color/main_background_darker"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
@@ -12,14 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:visibility="visible"
+        android:visibility="gone"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:src="@drawable/cat_1"
             android:scaleType="centerCrop" />
 
         <LinearLayout
@@ -29,8 +28,8 @@
             android:layout_marginTop="8dp"
             android:padding="8dp"
             android:gravity="center"
-            android:background="@drawable/next_round_button_background"
-            android:backgroundTint="@color/black"
+            android:background="@drawable/round_button_background_50dp"
+            android:backgroundTint="@color/button_white"
             android:clickable="true"
             android:focusable="true"
             android:foreground="@drawable/button_foreground_round_50dp"
@@ -41,7 +40,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:background="@drawable/round_add_24"
-                android:backgroundTint="@color/main_red"
+                android:backgroundTint="@color/black"
                 android:visibility="visible" />
 
             <TextView
@@ -56,7 +55,7 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:text="@string/add_new_hub"
-                android:textColor="@color/main_red"
+                android:textColor="@color/black_text"
                 android:fontFamily="@font/montserrat_bold" />
         </LinearLayout>
 
@@ -67,20 +66,19 @@
         android:id="@+id/mainControlPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="24dp"
-                app:cardBackgroundColor="@color/white"
+                android:layout_margin="15dp"
+                app:cardBackgroundColor="@color/main_background_light"
                 app:cardCornerRadius="35dp">
 
                 <LinearLayout
@@ -91,44 +89,46 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0"
                         android:orientation="horizontal">
 
                         <ImageView
                             android:id="@+id/hubWiFiConnectionIndicator"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:layout_marginLeft="16dp"
                             android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="0"
                             android:background="@drawable/baseline_wifi_off_24"
-                            android:backgroundTint="@color/black"/>
+                            android:backgroundTint="@color/black" />
 
                         <TextView
                             android:id="@+id/hubNameText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_margin="16dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_bold"
                             android:gravity="center"
                             android:text="@string/smart_hub_name"
                             android:textColor="@color/black"
-                            android:textSize="24sp"
-                            android:fontFamily="@font/montserrat_bold" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:id="@+id/hubBatteryIndicator"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:layout_marginRight="16dp"
                             android:layout_gravity="center_vertical"
+                            android:layout_marginRight="16dp"
+                            android:layout_weight="0"
                             android:background="@drawable/baseline_battery_4_bar_24"
-                            android:backgroundTint="@color/black"/>
+                            android:backgroundTint="@color/black" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_weight="2"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -150,33 +150,44 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="12dp"
-                                    android:layout_marginRight="12dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_marginRight="12dp"
                                     android:layout_marginBottom="8dp"
+                                    android:fontFamily="@font/montserrat_bold"
                                     android:gravity="center"
-                                    android:fontFamily="@font/montserrat_medium"
                                     android:text="@string/water_level"
                                     android:textColor="@color/black" />
 
-                                <ProgressBar
-                                    android:id="@+id/waterLevelProgress"
-                                    style="?android:attr/progressBarStyleHorizontal"
+                                <RelativeLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:background="@drawable/round_button_background_50dp"
                                     android:layout_marginLeft="8dp"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginRight="8dp"
-                                    android:layout_marginBottom="16dp"
-                                    android:progress="77"
-                                    android:progressDrawable="@drawable/vertical_dash_progressbar" />
+                                    android:layout_marginBottom="16dp">
+
+                                    <ProgressBar
+                                        android:id="@+id/waterLevelProgress"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginRight="8dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:progress="77"
+                                        android:progressDrawable="@drawable/vertical_dash_progressbar" />
+                                </RelativeLayout>
 
                                 <TextView
                                     android:id="@+id/waterLevelProgressText"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="-48dp"
-                                    android:gravity="center"
+                                    android:layout_marginTop="-65dp"
+                                    android:textSize="16sp"
                                     android:fontFamily="@font/montserrat_semibold"
+                                    android:gravity="center"
                                     android:text="77%"
                                     android:textColor="@color/black" />
                             </LinearLayout>
@@ -192,33 +203,44 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="12dp"
-                                    android:layout_marginRight="12dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_marginRight="12dp"
                                     android:layout_marginBottom="8dp"
+                                    android:fontFamily="@font/montserrat_bold"
                                     android:gravity="center"
-                                    android:fontFamily="@font/montserrat_medium"
                                     android:text="@string/feed_level"
                                     android:textColor="@color/black" />
 
-                                <ProgressBar
-                                    android:id="@+id/feedLevelProgress"
-                                    style="?android:attr/progressBarStyleHorizontal"
+                                <RelativeLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:background="@drawable/round_button_background_50dp"
                                     android:layout_marginLeft="8dp"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginRight="8dp"
-                                    android:layout_marginBottom="16dp"
-                                    android:progress="50"
-                                    android:progressDrawable="@drawable/vertical_dash_progressbar" />
+                                    android:layout_marginBottom="16dp">
+
+                                    <ProgressBar
+                                        android:id="@+id/feedLevelProgress"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginRight="8dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:progress="50"
+                                        android:progressDrawable="@drawable/vertical_dash_progressbar" />
+                                </RelativeLayout>
 
                                 <TextView
                                     android:id="@+id/feedLevelProgressText"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="-48dp"
-                                    android:gravity="center"
+                                    android:layout_marginTop="-65dp"
                                     android:fontFamily="@font/montserrat_semibold"
+                                    android:gravity="center"
+                                    android:textSize="16sp"
                                     android:text="50%"
                                     android:textColor="@color/black" />
                             </LinearLayout>
@@ -228,21 +250,21 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:orientation="vertical"
                             android:paddingLeft="0dp"
                             android:paddingRight="8dp"
-                            android:paddingBottom="8dp"
-                            android:orientation="vertical">
+                            android:paddingBottom="8dp">
 
                             <LinearLayout
                                 android:id="@+id/lockHubButton"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:layout_margin="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/round_button_background_50dp"
+                                android:backgroundTint="@color/button_white"
                                 android:clickable="true"
                                 android:focusable="true"
-                                android:background="@drawable/next_round_button_background"
-                                android:backgroundTint="@color/greeting_activity_background"
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:orientation="horizontal">
 
@@ -251,19 +273,20 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
-                                    android:visibility="visible"
                                     android:layout_marginLeft="8dp"
-                                    android:background="@drawable/baseline_lock_24" />
+                                    android:background="@drawable/baseline_lock_24"
+                                    android:backgroundTint="@color/black_text"
+                                    android:visibility="visible" />
 
                                 <ProgressBar
                                     android:id="@+id/lockHubButtonProgress"
                                     style="?android:attr/progressBarStyle"
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
-                                    android:visibility="invisible"
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="-24dp"
-                                    android:indeterminateTint="@color/black" />
+                                    android:indeterminateTint="@color/black_text"
+                                    android:visibility="invisible" />
 
                                 <TextView
                                     android:id="@+id/lockHubButtonText"
@@ -272,24 +295,24 @@
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="4dp"
                                     android:layout_marginRight="16dp"
-                                    android:textColor="@color/black"
-                                    android:singleLine="true"
                                     android:ellipsize="end"
                                     android:fontFamily="@font/montserrat_bold"
-                                    android:text="@string/lock_hub" />
+                                    android:singleLine="true"
+                                    android:text="@string/lock_hub"
+                                    android:textColor="@color/black_text" />
                             </LinearLayout>
 
                             <LinearLayout
                                 android:id="@+id/setFeedingButton"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:layout_margin="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/round_button_background_50dp"
+                                android:backgroundTint="@color/button_white"
                                 android:clickable="true"
                                 android:focusable="true"
-                                android:background="@drawable/next_round_button_background"
                                 android:foreground="@drawable/button_foreground_round_50dp"
-                                android:backgroundTint="@color/greeting_activity_background"
                                 android:orientation="horizontal">
 
                                 <ImageView
@@ -298,7 +321,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="8dp"
-                                    android:background="@drawable/baseline_feeding_24" />
+                                    android:background="@drawable/baseline_feeding_24"
+                                    android:backgroundTint="@color/black_text" />
 
                                 <TextView
                                     android:id="@+id/setFeedingButtonText"
@@ -307,23 +331,23 @@
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="4dp"
                                     android:layout_marginRight="16dp"
-                                    android:textColor="@color/black"
-                                    android:singleLine="true"
                                     android:ellipsize="end"
                                     android:fontFamily="@font/montserrat_bold"
-                                    android:text="@string/feeding" />
+                                    android:singleLine="true"
+                                    android:text="@string/feeding"
+                                    android:textColor="@color/black_text" />
                             </LinearLayout>
 
                             <LinearLayout
                                 android:id="@+id/hubCameraButton"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:layout_margin="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/round_button_background_50dp"
+                                android:backgroundTint="@color/button_white"
                                 android:clickable="true"
                                 android:focusable="true"
-                                android:backgroundTint="@color/greeting_activity_background"
-                                android:background="@drawable/next_round_button_background"
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:orientation="horizontal">
 
@@ -333,7 +357,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="8dp"
-                                    android:background="@drawable/baseline_linked_camera_24" />
+                                    android:background="@drawable/baseline_linked_camera_24"
+                                    android:backgroundTint="@color/black_text" />
 
                                 <TextView
                                     android:id="@+id/hubCameraButtonText"
@@ -342,23 +367,23 @@
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="4dp"
                                     android:layout_marginRight="16dp"
-                                    android:textColor="@color/black"
-                                    android:singleLine="true"
                                     android:ellipsize="end"
                                     android:fontFamily="@font/montserrat_bold"
-                                    android:text="@string/hub_camera" />
+                                    android:singleLine="true"
+                                    android:text="@string/hub_camera"
+                                    android:textColor="@color/black_text" />
                             </LinearLayout>
 
                             <LinearLayout
                                 android:id="@+id/hubSettingsButton"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:layout_margin="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/round_button_background_50dp"
+                                android:backgroundTint="@color/button_white"
                                 android:clickable="true"
                                 android:focusable="true"
-                                android:backgroundTint="@color/greeting_activity_background"
-                                android:background="@drawable/next_round_button_background"
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:orientation="horizontal">
 
@@ -368,7 +393,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="8dp"
-                                    android:background="@drawable/baseline_settings_24" />
+                                    android:background="@drawable/baseline_settings_24"
+                                    android:backgroundTint="@color/black_text" />
 
                                 <TextView
                                     android:id="@+id/hubSettingsButtonText"
@@ -377,169 +403,489 @@
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="4dp"
                                     android:layout_marginRight="16dp"
-                                    android:textColor="@color/black"
-                                    android:singleLine="true"
                                     android:ellipsize="end"
                                     android:fontFamily="@font/montserrat_bold"
-                                    android:text="@string/hub_settings" />
+                                    android:singleLine="true"
+                                    android:text="@string/hub_settings"
+                                    android:textColor="@color/black_text" />
                             </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:id="@+id/progress1Layout"
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/circle_background_black"
+                                android:backgroundTint="@color/white"
+                                android:padding="5dp">
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="60"
+                                    android:progressDrawable="@drawable/circle_progress_background"
+                                    android:rotation="-108" />
+
+                                <ProgressBar
+                                    android:id="@+id/progress1"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="34"
+                                    android:progressDrawable="@drawable/cicle_progress"
+                                    android:rotation="-108" />
+
+                                <TextView
+                                    android:id="@+id/progress1Data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="23°C"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:id="@+id/progress1DataName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="@string/room_temperature"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="9sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/progress2Layout"
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/circle_background_black"
+                                android:backgroundTint="@color/white"
+                                android:padding="5dp">
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="60"
+                                    android:progressDrawable="@drawable/circle_progress_background"
+                                    android:rotation="-108" />
+
+                                <ProgressBar
+                                    android:id="@+id/progress2"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="48"
+                                    android:progressDrawable="@drawable/cicle_progress"
+                                    android:rotation="-108" />
+
+                                <TextView
+                                    android:id="@+id/progress2Data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="77%"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:id="@+id/progress2DataName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="@string/room_humidity"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="9sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/progress3Layout"
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/circle_background_black"
+                                android:backgroundTint="@color/white"
+                                android:padding="5dp">
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="60"
+                                    android:progressDrawable="@drawable/circle_progress_background"
+                                    android:rotation="-108" />
+
+                                <ProgressBar
+                                    android:id="@+id/progress3"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="58"
+                                    android:progressDrawable="@drawable/cicle_progress"
+                                    android:rotation="-108" />
+
+                                <TextView
+                                    android:id="@+id/progress3Data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="99%"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:id="@+id/progress3DataName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="@string/air_quality"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="9sp" />
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:id="@+id/progress4Layout"
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/circle_background_black"
+                                android:padding="5dp"
+                                android:backgroundTint="@color/white">
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="60"
+                                    android:progressDrawable="@drawable/circle_progress_background"
+                                    android:rotation="-108" />
+
+                                <ProgressBar
+                                    android:id="@+id/progress4"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="0"
+                                    android:progressDrawable="@drawable/cicle_progress"
+                                    android:rotation="-108" />
+
+                                <TextView
+                                    android:id="@+id/progress4Data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="NO"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:id="@+id/progress4DataName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:textColor="@color/black_text"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:textAlignment="center"
+                                    android:textSize="9sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:text="@string/dangerous_gases" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/progress5Layout"
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/circle_background_black"
+                                android:padding="5dp"
+                                android:backgroundTint="@color/white">
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="60"
+                                    android:progressDrawable="@drawable/circle_progress_background"
+                                    android:rotation="-108" />
+
+                                <ProgressBar
+                                    android:id="@+id/progress5"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="0"
+                                    android:progressDrawable="@drawable/cicle_progress"
+                                    android:rotation="-108" />
+
+                                <TextView
+                                    android:id="@+id/progress5Data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="0%"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:id="@+id/progress5DataName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:textColor="@color/black_text"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:textAlignment="center"
+                                    android:textSize="9sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:text="@string/dangerous_gases1" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/progress6Layout"
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/circle_background_black"
+                                android:padding="5dp"
+                                android:backgroundTint="@color/white">
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="60"
+                                    android:progressDrawable="@drawable/circle_progress_background"
+                                    android:rotation="-108" />
+
+                                <ProgressBar
+                                    android:id="@+id/progress6"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:padding="5dp"
+                                    android:progress="0"
+                                    android:progressDrawable="@drawable/cicle_progress"
+                                    android:rotation="-108" />
+
+                                <TextView
+                                    android:id="@+id/progress6Data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="0%"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:id="@+id/progress6DataName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:textColor="@color/black_text"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:textAlignment="center"
+                                    android:textSize="9sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:text="@string/dangerous_gases2" />
+                            </RelativeLayout>
+
+
                         </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="35dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView3"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:textAlignment="center"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textColor="@color/black"
-                        android:text="@string/hub_sensors_data" />
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_weight="3"
+                        android:orientation="horizontal">
 
+                        <LinearLayout
+                            android:id="@+id/pourFeedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_button_background_50dp"
+                            android:backgroundTint="@color/button_white"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/button_foreground_round_50dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pourFeedButtonImg"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:background="@drawable/baseline_feeding_24"
+                                android:backgroundTint="@color/black_text"
+                                android:visibility="visible" />
+
+                            <ProgressBar
+                                android:id="@+id/pourFeedButtonProgress"
+                                style="?android:attr/progressBarStyle"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="-18dp"
+                                android:visibility="invisible"
+                                android:indeterminateTint="@color/black_text" />
+
+                            <TextView
+                                android:id="@+id/pourFeedButtonText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:text="@string/pour_feed"
+                                android:textColor="@color/black_text"
+                                android:fontFamily="@font/montserrat_bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/pourWaterButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:background="@drawable/round_button_background_50dp"
+                            android:backgroundTint="@color/button_white"
+                            android:foreground="@drawable/button_foreground_round_50dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pourWaterButtonImg"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:visibility="visible"
+                                android:background="@drawable/baseline_water_drop_24"
+                                android:backgroundTint="@color/black_text"/>
+
+                            <ProgressBar
+                                android:id="@+id/pourWaterButtonProgress"
+                                style="?android:attr/progressBarStyle"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="-18dp"
+                                android:visibility="invisible"
+                                android:indeterminateTint="@color/black_text" />
+
+                            <TextView
+                                android:id="@+id/pourWaterButtonText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:textColor="@color/black_text"
+                                android:gravity="center"
+                                android:textSize="14sp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:text="@string/pour_water" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/pourFeedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginBottom="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/next_round_button_background"
-                    android:backgroundTint="@color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="@drawable/button_foreground_round_50dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/pourFeedButtonImg"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:background="@drawable/baseline_feeding_24"
-                        android:backgroundTint="@color/main_red"
-                        android:visibility="visible" />
-
-                    <ProgressBar
-                        android:id="@+id/pourFeedButtonProgress"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="-24dp"
-                        android:visibility="invisible"
-                        android:indeterminateTint="@color/main_red" />
-
-                    <TextView
-                        android:id="@+id/pourFeedButtonText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:textSize="14sp"
-                        android:gravity="center"
-                        android:ellipsize="end"
-                        android:singleLine="true"
-                        android:text="@string/pour_feed"
-                        android:textColor="@color/main_red"
-                        android:fontFamily="@font/montserrat_bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/pourWaterButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_marginBottom="24dp"
-                    android:layout_marginLeft="12dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:background="@drawable/next_round_button_background"
-                    android:backgroundTint="@color/black"
-                    android:foreground="@drawable/button_foreground_round_50dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/pourWaterButtonImg"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center"
-                        android:visibility="visible"
-                        android:background="@drawable/baseline_water_drop_24"
-                        android:backgroundTint="@color/main_red"/>
-
-                    <ProgressBar
-                        android:id="@+id/pourWaterButtonProgress"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="-24dp"
-                        android:visibility="invisible"
-                        android:indeterminateTint="@color/main_red" />
-
-                    <TextView
-                        android:id="@+id/pourWaterButtonText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:textColor="@color/main_red"
-                        android:gravity="center"
-                        android:textSize="14sp"
-                        android:singleLine="true"
-                        android:ellipsize="end"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:text="@string/pour_water" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
-
 </FrameLayout>

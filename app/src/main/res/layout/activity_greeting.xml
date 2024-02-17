@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/greeting_activity_background2"
+    android:background="@color/main_background_darker"
     tools:context=".ui.greeting.GreetingActivity">
 
     <androidx.viewpager2.widget.ViewPager2
@@ -27,12 +27,12 @@
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/next_round_button_background"
+            android:background="@drawable/round_button_background_50dp"
             android:clickable="true"
             android:focusable="true"
-            android:textColor="@color/main_red"
+            android:textColor="@color/black_text"
             android:foreground="@drawable/button_foreground_round_50dp"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/white"
             android:gravity="center"
             android:text="Next"
             android:textSize="16sp"
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:dampingRatio="0.5"
-            app:dotsColor="@color/main_red"
+            app:dotsColor="@color/white"
             app:dotsCornerRadius="5dp"
             app:dotsSize="10dp"
             app:dotsSpacing="2dp"

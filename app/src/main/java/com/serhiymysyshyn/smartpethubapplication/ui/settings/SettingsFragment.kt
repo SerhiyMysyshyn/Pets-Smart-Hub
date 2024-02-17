@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.serhiymysyshyn.smartpethubapplication.R
+import com.serhiymysyshyn.smartpethubapplication.databinding.FragmentSettingsBinding
+import com.serhiymysyshyn.smartpethubapplication.logic.core.PicassoHelper
 
 class SettingsFragment : Fragment() {
 
@@ -15,18 +17,20 @@ class SettingsFragment : Fragment() {
     }
 
     private lateinit var viewModel: SettingsViewModel
+    private lateinit var binding: FragmentSettingsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        binding = FragmentSettingsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(SettingsViewModel::class.java)
-        // TODO: Use the ViewModel
+        PicassoHelper().loadDrawableToImageView(R.drawable.cat_settings_1, binding.imageViewSettings)
     }
 
 }

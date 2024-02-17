@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toBitmap
 import com.serhiymysyshyn.smartpethubapplication.R
 import com.serhiymysyshyn.smartpethubapplication.databinding.ActivityErrorBinding
+import com.serhiymysyshyn.smartpethubapplication.logic.core.PicassoHelper
 
 
 class ErrorActivity : AppCompatActivity() {
@@ -19,8 +20,6 @@ class ErrorActivity : AppCompatActivity() {
         binding = ActivityErrorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val bitmap = Bitmap.createScaledBitmap(applicationContext.resources.getDrawable(R.drawable.cat_and_error).toBitmap(), 1000, 1000, true)
-        binding.imageView6.setImageBitmap(bitmap)
-
+        PicassoHelper().loadDrawableToImageView(R.drawable.cat_and_error, binding.imageView6)
     }
 }

@@ -17,6 +17,7 @@
         android:text="Oops,\nsomething went wrong..."
         android:fontFamily="@font/montserrat_extrabold"
         android:textSize="20sp"
+        android:textColor="@color/black_text"
         app:layout_constraintBottom_toTopOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -25,7 +26,6 @@
         android:id="@+id/imageView6"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@drawable/cat_and_error"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,12 +45,14 @@
             android:gravity="center"
             android:text="Error title"
             android:textSize="20sp"
+            android:textColor="@color/black_text"
             android:fontFamily="@font/montserrat_extrabold"/>
 
         <TextView
             android:id="@+id/errorDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black_text"
             android:layout_margin="8dp"
             android:text="Error description"
             android:fontFamily="@font/montserrat_medium"

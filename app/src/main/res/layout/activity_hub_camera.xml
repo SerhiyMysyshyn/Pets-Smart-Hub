@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,185 +11,202 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
         android:layout_weight="2"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="start|center_vertical"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/backButton"
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/camera_move_left_24"
-                android:foreground="@drawable/button_foreground_round_50dp"
-                android:background="@drawable/round_button_background_50dp"
-                android:backgroundTint="@color/transparent" />
-
-            <TextView
-                android:id="@+id/textView3"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_medium"
-                android:singleLine="true"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="Connecting to Hub camera..." />
+                android:gravity="start|center_vertical"
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/reloadButton"
-                android:layout_width="75dp"
+                <ImageButton
+                    android:id="@+id/backButton"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_button_background_50dp"
+                    android:backgroundTint="@color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:src="@drawable/camera_move_left_24" />
+
+                <TextView
+                    android:id="@+id/cameraStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Connecting to Hub camera..." />
+
+                <TextView
+                    android:id="@+id/additionalCameraInfo"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/baseline_refresh_24"
-                android:foreground="@drawable/button_foreground_round_50dp"
-                android:background="@drawable/round_button_background_50dp"
-                android:backgroundTint="@color/transparent" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/cameraTurnOnOffLightButton"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/round_button_background_50dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:src="@drawable/baseline_light_24" />
+
+                <ImageButton
+                    android:id="@+id/cameraMakeSnapshotButton"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/round_button_background_50dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:src="@drawable/baseline_camera_24" />
+
+                <ImageButton
+                    android:id="@+id/reloadButton"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/round_button_background_50dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:src="@drawable/baseline_refresh_24" />
+
+                <ImageButton
+                    android:id="@+id/cameraSettingsButton"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/round_button_background_50dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:src="@drawable/baseline_more_vert_24" />
+            </LinearLayout>
         </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="35dp">
+
+            <WebView
+                android:id="@+id/hubCameraWebView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginBottom="15dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/cameraTurnOnOffLightButton"
-                android:layout_width="75dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/baseline_light_24"
-                android:foreground="@drawable/button_foreground_round_50dp"
-                android:background="@drawable/round_button_background_50dp"
-                android:backgroundTint="@color/button_white" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/cameraMakeSnapshotButton"
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/baseline_camera_24"
-                android:foreground="@drawable/button_foreground_round_50dp"
-                android:background="@drawable/round_button_background_50dp"
-                android:backgroundTint="@color/button_white" />
+                <ImageButton
+                    android:id="@+id/cameraMoveUpButton"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/round_button_background_50dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:src="@drawable/camera_move_up_24" />
+            </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/cameraSettingsButton"
-                android:layout_width="75dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/baseline_more_vert_24"
-                android:foreground="@drawable/button_foreground_round_50dp"
-                android:background="@drawable/round_button_background_50dp"
-                android:backgroundTint="@color/button_white" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/cameraMoveLeftButton"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/round_button_background_50dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:src="@drawable/camera_move_left_24" />
+
+                <ImageButton
+                    android:id="@+id/cameraMoveBottomButton"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/round_button_background_50dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:src="@drawable/camera_move_bottom_24" />
+
+                <ImageButton
+                    android:id="@+id/cameraMoveRightButton"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/round_button_background_50dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:src="@drawable/camera_move_right_24" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardBackgroundColor="@color/white"
-        android:layout_weight="1"
-        android:layout_margin="15dp"
-        app:cardCornerRadius="35dp">
-
-        <WebView
-            android:id="@+id/hubCameraWebView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center" />
-    </androidx.cardview.widget.CardView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="15dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/cameraMoveUpButton"
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/camera_move_up_24"
-                android:foreground="@drawable/button_foreground_round_50dp"
-                android:background="@drawable/round_button_background_50dp"
-                android:backgroundTint="@color/button_white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/cameraMoveLeftButton"
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/camera_move_left_24"
-                android:foreground="@drawable/button_foreground_round_50dp"
-                android:background="@drawable/round_button_background_50dp"
-                android:backgroundTint="@color/button_white"/>
-
-            <ImageButton
-                android:id="@+id/cameraMoveBottomButton"
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/camera_move_bottom_24"
-                android:foreground="@drawable/button_foreground_round_50dp"
-                android:background="@drawable/round_button_background_50dp"
-                android:backgroundTint="@color/button_white" />
-
-            <ImageButton
-                android:id="@+id/cameraMoveRightButton"
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/camera_move_right_24"
-                android:foreground="@drawable/button_foreground_round_50dp"
-                android:background="@drawable/round_button_background_50dp"
-                android:backgroundTint="@color/button_white" />
-        </LinearLayout>
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

@@ -71,4 +71,16 @@
     <string name="slide3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="slide4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 
+    <!-- Add new Smart Hub activity instruction -->
+<!--    <string name="add_hub_step_1">Увімкніть SmartHub, натиснувши кнопку живлення на корпусі</string>-->
+<!--    <string name="add_hub_step_2">Під\ʼєднайте свій SmartHub до WiFi мережі (Налаштування -> Підключення до мережі)</string>-->
+<!--    <string name="add_hub_step_3">Згенеруйте унікальний ідентифікатор SmartHubID для підключення до пристрою (Налаштування -> Підключення до мобільного додатку)</string>-->
+<!--    <string name="add_hub_step_4">Введіть унікальний ідентифікатор SmartHubID у поле, що знаходиться нижче.</string>-->
+
+    <string name="add_hub_step_1"><b>1.</b> Turn on the SmartHub by pressing the power button on the case</string>
+    <string name="add_hub_step_2"><b>2.</b> Connect your SmartHub to a WiFi network\n<b>(Settings \➜ Network connection)</b></string>
+    <string name="add_hub_step_3"><b>3.</b> Generate a unique SmartHubID to connect to the device\n<b>(Settings \➜ Mobile App Connection)</b></string>
+    <string name="add_hub_step_4"><b>4.</b> Enter your unique SmartHubID in the field below.</string>
+    <string name="enter_smart_hub_id_here">Enter SmartHubID here...</string>
+
 </resources>

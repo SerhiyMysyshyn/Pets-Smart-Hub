@@ -16,11 +16,21 @@ class HubCameraActivity : AppCompatActivity() {
         binding = ActivityHubCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backButton.setOnClickListener {
+            // Additional code here
+            onBackPressed()
+        }
+
         val webSettings: WebSettings = binding.hubCameraWebView.settings
         webSettings.javaScriptEnabled = true
         webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH)
-        webSettings.useWideViewPort = true;
-        webSettings.builtInZoomControls = true
+        //webSettings.useWideViewPort = true;
+        //webSettings.builtInZoomControls = true
         binding.hubCameraWebView.loadUrl("http://192.168.0.189:81/stream")
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this@HubCameraActivity.finish()
     }
 }

@@ -2,6 +2,8 @@ package com.serhiymysyshyn.smartpethubapplication
 
 import android.app.Activity
 import android.app.Application
+import android.content.Intent
+import androidx.core.view.ContentInfoCompat.Flags
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
@@ -10,6 +12,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.serhiymysyshyn.smartpethubapplication.debug.CustomTags
 import com.serhiymysyshyn.smartpethubapplication.debug.Logger
+import com.serhiymysyshyn.smartpethubapplication.ui.login.LoginActivity
 import com.serhiymysyshyn.smartpethubapplication.ui.main.MainActivity
 
 
@@ -44,6 +47,7 @@ class PetsSmartHubApplication: Application() {
                 try {
                     mAuth.signOut()
                     googleSignInClient!!.signOut().addOnCompleteListener(activity) {
+                        startActivity(Intent(activity, LoginActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
                         activity.finish()
                     }
                 } catch (e: Exception) {

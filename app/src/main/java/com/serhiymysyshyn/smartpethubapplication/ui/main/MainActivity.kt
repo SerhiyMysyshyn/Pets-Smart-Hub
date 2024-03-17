@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication
 import com.serhiymysyshyn.smartpethubapplication.R
 import com.serhiymysyshyn.smartpethubapplication.databinding.ActivityMainBinding
 import com.serhiymysyshyn.smartpethubapplication.ui.home.HomeFragment

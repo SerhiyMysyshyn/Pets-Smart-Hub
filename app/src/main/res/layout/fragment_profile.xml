@@ -70,7 +70,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="25dp">
+                    app:cardCornerRadius="15dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -89,7 +89,7 @@
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginBottom="15dp"
                                 app:cardBackgroundColor="@color/white"
-                                app:cardCornerRadius="15dp">
+                                app:cardCornerRadius="10dp">
 
                                 <ImageView
                                     android:id="@+id/profileLogo"
@@ -179,11 +179,43 @@
                     android:layout_height="match_parent"
                     android:layout_margin="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="25dp">
+                    app:cardCornerRadius="15dp">
 
                     <LinearLayout
+                        android:id="@+id/addPetsDataLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/button_foreground_round_15dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="47dp"
+                            android:layout_marginBottom="47dp"
+                            android:background="@drawable/round_add_24"
+                            android:backgroundTint="@color/black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black_text"
+                            android:fontFamily="@font/montserrat_extrabold"
+                            android:textSize="24sp"
+                            android:text="@string/register_my_pet" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/petsDataLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:visibility="gone"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -198,7 +230,7 @@
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginBottom="15dp"
                                 app:cardBackgroundColor="@color/white"
-                                app:cardCornerRadius="15dp">
+                                app:cardCornerRadius="10dp">
 
                                 <ImageView
                                     android:id="@+id/profilePetImage"
@@ -330,7 +362,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="25dp">
+                    app:cardCornerRadius="15dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -349,7 +381,7 @@
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginBottom="15dp"
                                 app:cardBackgroundColor="@color/white"
-                                app:cardCornerRadius="15dp">
+                                app:cardCornerRadius="10dp">
 
                                 <ImageView
                                     android:id="@+id/profileHubImage"
@@ -417,17 +449,17 @@
                 <LinearLayout
                     android:id="@+id/logoutButton"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="?attr/actionBarSize"
                     android:layout_gravity="bottom"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_marginBottom="25dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/round_button_background_50dp"
+                    android:background="@drawable/round_button_background_10dp"
                     android:backgroundTint="@color/red"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="@drawable/button_foreground_round_50dp"
+                    android:foreground="@drawable/button_foreground_round_10dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,46 +12,58 @@
         android:id="@+id/greetingViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/textView12" />
+        android:layout_above="@+id/spring_dots_indicator"/>
+
+    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+        android:id="@+id/spring_dots_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/greetingNextButtonContainer"
+        app:dampingRatio="0.5"
+        app:dotsColor="@color/white"
+        app:dotsCornerRadius="5dp"
+        app:dotsSize="10dp"
+        app:dotsSpacing="2dp"
+        app:dotsStrokeColor="@color/black"
+        app:dotsStrokeWidth="5dp"
+        app:stiffness="300" />
+
 
     <LinearLayout
+        android:id="@+id/greetingNextButtonContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
         android:gravity="center"
-        android:layout_weight="5"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/greetingNextButton"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/round_button_background_50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button_background_10dp"
             android:clickable="true"
             android:focusable="true"
             android:textColor="@color/black_text"
-            android:foreground="@drawable/button_foreground_round_50dp"
+            android:foreground="@drawable/button_foreground_round_10dp"
             android:backgroundTint="@color/white"
             android:gravity="center"
-            android:text="Next"
+            android:text="@string/next_string"
             android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:fontFamily="@font/montserrat_black"
             android:textAllCaps="true"/>
 
-        <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
-            android:id="@+id/spring_dots_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:dampingRatio="0.5"
-            app:dotsColor="@color/white"
-            app:dotsCornerRadius="5dp"
-            app:dotsSize="10dp"
-            app:dotsSpacing="2dp"
-            app:dotsStrokeColor="@color/black"
-            app:dotsStrokeWidth="5dp"
-            app:stiffness="300" />
+
     </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

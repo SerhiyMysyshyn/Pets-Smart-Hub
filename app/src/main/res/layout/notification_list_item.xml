@@ -14,9 +14,9 @@
         android:layout_marginEnd="15dp"
         android:clickable="true"
         android:focusable="true"
-        android:foreground="@drawable/button_foreground_8dp"
+        android:foreground="@drawable/button_foreground_round_15dp"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="25dp">
+        app:cardCornerRadius="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="10dp">
 
                     <ImageView
                         android:id="@+id/notificationItemImg"

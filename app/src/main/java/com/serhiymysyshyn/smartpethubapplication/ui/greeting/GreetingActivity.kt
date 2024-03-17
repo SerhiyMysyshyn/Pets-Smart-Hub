@@ -9,6 +9,7 @@ import com.serhiymysyshyn.smartpethubapplication.cache.sharedPreferences.PrefsMa
 import com.serhiymysyshyn.smartpethubapplication.databinding.ActivityGreetingBinding
 import com.serhiymysyshyn.smartpethubapplication.logic.adapters.GreetingPagerAdapter
 import com.serhiymysyshyn.smartpethubapplication.ui.login.LoginActivity
+import com.serhiymysyshyn.smartpethubapplication.ui.main.MainActivity
 
 class GreetingActivity : AppCompatActivity() {
 

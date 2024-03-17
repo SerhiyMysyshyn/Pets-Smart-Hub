@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background_darker"
+    android:orientation="vertical"
+    tools:context=".ui.feedingSchedule.FeedingScheduleActivity">
+
+    <LinearLayout
+        android:id="@+id/customFeedingScheduleBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:minHeight="56dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/backButtonFeeding"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button_background_50dp"
+            android:backgroundTint="@color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/button_foreground_round_50dp"
+            android:src="@drawable/camera_move_left_24" />
+
+        <TextView
+            android:id="@+id/feedingScheduleActivityTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/black_text"
+            android:text=""/>
+
+        <LinearLayout
+            android:id="@+id/synchronizeFeedingScheduleProgressContainer"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button_background_50dp"
+            android:backgroundTint="@color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:foreground="@drawable/button_foreground_round_50dp"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/synchronizeFeedingScheduleProgress"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:backgroundTint="@color/black"
+                android:indeterminateTint="@color/black_text"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/feedingScheduleViewPagerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/customFeedingScheduleBar"
+        android:layout_above="@+id/springDotsIndicator2"
+        android:orientation="vertical">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/feedingScheduleViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+        android:id="@+id/springDotsIndicator2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/feedingScheduleButtonsContainer"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:dampingRatio="0.5"
+        app:dotsColor="@color/white"
+        app:dotsCornerRadius="5dp"
+        app:dotsSize="10dp"
+        app:dotsSpacing="2dp"
+        app:dotsStrokeColor="@color/black"
+        app:dotsStrokeWidth="5dp"
+        app:stiffness="300" />
+
+
+    <LinearLayout
+        android:id="@+id/feedingScheduleButtonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/saveFeedingScheduleButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button_background_10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/black_text"
+            android:foreground="@drawable/button_foreground_round_10dp"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:text="@string/save_schedule"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:fontFamily="@font/montserrat_black"
+            android:textAllCaps="true"/>
+    </LinearLayout>
+
+</RelativeLayout>

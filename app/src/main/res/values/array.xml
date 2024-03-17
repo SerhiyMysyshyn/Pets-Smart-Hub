@@ -15,4 +15,9 @@
         <item>@string/slide4</item>
     </string-array>
 
+    <string-array name="feedingScheduleValues">
+        <item>@string/schedule_dry_food</item>
+        <item>@string/schedule_water</item>
+    </string-array>
+
 </resources>

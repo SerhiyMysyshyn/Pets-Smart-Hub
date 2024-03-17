@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/white"
-        android:layout_margin="24dp"
+        android:layout_margin="20dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="8dp"
-                android:foreground="@drawable/button_foreground_8dp"
+                android:foreground="@drawable/button_foreground_round_10dp"
                 android:orientation="horizontal">
 
                 <ImageView

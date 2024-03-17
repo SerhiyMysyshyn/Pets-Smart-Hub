@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/transparent"
+    tools:context=".ui.feedingSchedule.SetFeedingTimeBottomSheetFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bottom_sheet_dialog_custom_background_10dp"
+        android:backgroundTint="@color/main_background_darker"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/closeBottomSheetDialogButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/round_button_background_10dp"
+            android:backgroundTint="@color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="end"
+            android:foreground="@drawable/button_foreground_round_10dp"
+            android:src="@drawable/baseline_close_24" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_button_background_10dp"
+            android:backgroundTint="@color/main_background_light"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/black_text"
+                    android:text="Hour"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text=":"
+                    android:visibility="invisible"
+                    android:textColor="@color/black_text"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/black_text"
+                    android:text="Minute"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <NumberPicker
+                    android:id="@+id/hourTimePicker"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:animateLayoutChanges="true"
+                    android:animationCache="true"
+                    android:descendantFocusability="blocksDescendants"
+                    android:fadeScrollbars="true"
+                    android:theme="@style/CustomColorPicker" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text=":"
+                    android:textColor="@color/black_text"
+                    android:textSize="24sp" />
+
+                <NumberPicker
+                    android:id="@+id/minuteTimePicker"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:animateLayoutChanges="true"
+                    android:animationCache="true"
+                    android:descendantFocusability="blocksDescendants"
+                    android:fadeScrollbars="true"
+                    android:theme="@style/CustomColorPicker" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/round_button_background_10dp"
+            android:backgroundTint="@color/main_background_light"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:textSize="16sp"
+                android:layout_toStartOf="@+id/linearLayout"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical|start"
+                android:text="@string/portion_size"
+                android:textColor="@color/black_text" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/round_button_background_5dp"
+                android:backgroundTint="@color/grey"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/minFoodPortionButton"
+                    android:layout_width="36dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_button_background_5dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_5dp"
+                    android:src="@drawable/baseline_minus_24" />
+
+                <TextView
+                    android:id="@+id/foodPortionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:singleLine="true"
+                    android:text="---"
+                    android:textColor="@color/black_text"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/portionSizeV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:paddingStart="5dp"
+                    android:singleLine="true"
+                    android:text="--"
+                    android:textColor="@color/black_text"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@+id/addFoodPortionButton"
+                    android:layout_width="36dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_button_background_5dp"
+                    android:backgroundTint="@color/button_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground_round_5dp"
+                    android:src="@drawable/round_add_24" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/saveNewScheduleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/saveNewScheduleButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/round_button_background_10dp"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/montserrat_black"
+                android:foreground="@drawable/button_foreground_round_10dp"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/add"
+                android:textAllCaps="true"
+                android:textColor="@color/black_text"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>

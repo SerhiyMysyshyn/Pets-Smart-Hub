@@ -3,7 +3,6 @@ package com.serhiymysyshyn.smartpethubapplication
 import android.app.Activity
 import android.app.Application
 import android.content.Intent
-import androidx.core.view.ContentInfoCompat.Flags
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
@@ -12,8 +11,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.serhiymysyshyn.smartpethubapplication.debug.CustomTags
 import com.serhiymysyshyn.smartpethubapplication.debug.Logger
+import com.serhiymysyshyn.smartpethubapplication.ui.feedingSchedule.FeedingScheduleActivity
 import com.serhiymysyshyn.smartpethubapplication.ui.login.LoginActivity
-import com.serhiymysyshyn.smartpethubapplication.ui.main.MainActivity
 
 
 class PetsSmartHubApplication: Application() {
@@ -21,13 +20,14 @@ class PetsSmartHubApplication: Application() {
     companion object {
         private lateinit var mAuth: FirebaseAuth
         private lateinit var mInstance: PetsSmartHubApplication
+        private lateinit var feedingScheduleActivity: FeedingScheduleActivity
+
         fun getInstance(): PetsSmartHubApplication = mInstance
     }
 
     override fun onCreate() {
         super.onCreate()
         mInstance = this@PetsSmartHubApplication
-
         mAuth = Firebase.auth
     }
 
@@ -38,6 +38,12 @@ class PetsSmartHubApplication: Application() {
     fun firebaseCurrentUser(): FirebaseUser? {
        return mAuth.currentUser
     }
+
+    fun setFeedingScheduleActivity(activity: FeedingScheduleActivity) {
+        feedingScheduleActivity = activity
+    }
+
+    fun getFeedingScheduleActivity() = feedingScheduleActivity
 
     fun logoutUser(activity: Activity) {
         val googleSignInClient = GoogleSignIn.getClient(applicationContext, GoogleSignInOptions.DEFAULT_SIGN_IN)

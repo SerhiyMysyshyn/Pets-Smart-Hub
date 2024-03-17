@@ -23,7 +23,7 @@ import com.serhiymysyshyn.smartpethubapplication.debug.Logger
 import com.serhiymysyshyn.smartpethubapplication.logic.core.PicassoHelper
 import com.serhiymysyshyn.smartpethubapplication.ui.main.MainActivity
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity  : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModel: LoginViewModel

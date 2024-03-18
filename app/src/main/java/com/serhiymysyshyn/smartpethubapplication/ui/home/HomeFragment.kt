@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication.Companion.appComponent
 import com.serhiymysyshyn.smartpethubapplication.R
 import com.serhiymysyshyn.smartpethubapplication.databinding.FragmentHomeBinding
 import com.serhiymysyshyn.smartpethubapplication.logic.core.PicassoHelper
@@ -14,6 +14,7 @@ import com.serhiymysyshyn.smartpethubapplication.logic.entities.SmartHubV1Sensor
 import com.serhiymysyshyn.smartpethubapplication.ui.addNewHub.AddNewSmartHubActivity
 import com.serhiymysyshyn.smartpethubapplication.ui.feedingSchedule.FeedingScheduleActivity
 import com.serhiymysyshyn.smartpethubapplication.ui.hubCamera.HubCameraActivity
+import javax.inject.Inject
 
 
 class HomeFragment : Fragment() {
@@ -22,7 +23,7 @@ class HomeFragment : Fragment() {
         fun newInstance() = HomeFragment()
     }
 
-    private lateinit var viewModel: HomeViewModel
+    @Inject lateinit var viewModel: HomeViewModel
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
@@ -30,12 +31,12 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        appComponent.inject(this)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         // Запит чи є зареєстровані хаби для даного користувача
         checkIsSmartHubExist()

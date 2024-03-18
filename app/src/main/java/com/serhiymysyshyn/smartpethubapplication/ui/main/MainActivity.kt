@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication
+import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication.Companion.appComponent
 import com.serhiymysyshyn.smartpethubapplication.R
 import com.serhiymysyshyn.smartpethubapplication.databinding.ActivityMainBinding
 import com.serhiymysyshyn.smartpethubapplication.ui.home.HomeFragment
@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        appComponent.inject(this@MainActivity)
 
         val navView: BottomNavigationView = binding.navView
 

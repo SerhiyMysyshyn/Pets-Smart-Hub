@@ -1,18 +1,15 @@
 package com.serhiymysyshyn.smartpethubapplication.ui.feedingSchedule
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication
-import com.serhiymysyshyn.smartpethubapplication.R
 import com.serhiymysyshyn.smartpethubapplication.databinding.FragmentSetFeedingTimeBottomSheetBinding
 import com.serhiymysyshyn.smartpethubapplication.logic.entities.FeedingHour
 import java.time.LocalDateTime
-import javax.inject.Inject
 
 private const val ARG_PARAM1 = "dayOfWeekNumber"
 private const val ARG_PARAM2 = "foodTypeNumber"
@@ -35,7 +32,7 @@ class SetFeedingTimeBottomSheetFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentSetFeedingTimeBottomSheetBinding
     private lateinit var viewModel: SetFeedingTimeBottomSheetViewModel
-    private val parentActivity: FeedingScheduleActivity = PetsSmartHubApplication.getInstance().getFeedingScheduleActivity()
+    private var _iFeedingSchedule: FeedingSchedule? = null
     private var param1: Int? = null
     private var param2: Int? = null
 
@@ -56,9 +53,17 @@ class SetFeedingTimeBottomSheetFragment : BottomSheetDialogFragment() {
         return binding.root
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FeedingSchedule) {
+            _iFeedingSchedule = context
+        } else {
+            throw RuntimeException("$context must implement MyInterface")
+        }
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         binding.portionSizeV.apply {
             when (param2) {
                 0 -> { this.text = "g" }
@@ -96,7 +101,7 @@ class SetFeedingTimeBottomSheetFragment : BottomSheetDialogFragment() {
                                             getFoodType(),
                                             getCurrentPortionValue().toInt())
 
-            parentActivity.addNewScheduleItem(newHourItem)
+            _iFeedingSchedule?.addNewScheduleItem(newHourItem)
             this@SetFeedingTimeBottomSheetFragment.dismiss()
         }
 
@@ -114,4 +119,10 @@ class SetFeedingTimeBottomSheetFragment : BottomSheetDialogFragment() {
     }
 
     private fun getCurrentPortionValue() = binding.foodPortionTextView.text.toString()
+
+    override fun onDetach() {
+        super.onDetach()
+        _iFeedingSchedule = null
+    }
+
 }

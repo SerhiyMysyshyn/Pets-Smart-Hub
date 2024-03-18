@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_margin="8dp"
-        android:text="Oops,\nsomething went wrong..."
+        android:text="@string/error_string"
         android:fontFamily="@font/montserrat_extrabold"
         android:textSize="20sp"
         android:textColor="@color/black_text"

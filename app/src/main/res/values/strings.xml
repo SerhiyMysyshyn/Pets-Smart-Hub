@@ -72,8 +72,11 @@
     <string name="sign_in_with_google">Google account</string>
 
     <string name="next_string">Next</string>
+    <string name="skip_string">Skip</string>
     <string name="lets_go">Let\'s go</string>
     <string name="add">Save new schedule item</string>
+
+    <string name="error_string">Oops,\nsomething went wrong...</string>
 
     <!-- Greeting activity data -->
     <string name="welcome_to_app">Welcome to Smart Hub</string>

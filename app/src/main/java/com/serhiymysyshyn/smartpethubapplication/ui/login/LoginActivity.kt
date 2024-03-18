@@ -15,13 +15,18 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication
+import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication.Companion.appComponent
 import com.serhiymysyshyn.smartpethubapplication.R
 import com.serhiymysyshyn.smartpethubapplication.databinding.ActivityLoginBinding
 import com.serhiymysyshyn.smartpethubapplication.debug.CustomTags
 import com.serhiymysyshyn.smartpethubapplication.debug.Logger
 import com.serhiymysyshyn.smartpethubapplication.logic.core.PicassoHelper
+import com.serhiymysyshyn.smartpethubapplication.logic.entities.AppNotification
 import com.serhiymysyshyn.smartpethubapplication.ui.main.MainActivity
+import javax.inject.Inject
 
 class LoginActivity  : AppCompatActivity() {
 
@@ -37,13 +42,15 @@ class LoginActivity  : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        appComponent.inject(this)
+
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         PicassoHelper().loadDrawableToImageView(R.drawable.bot, binding.imageView5)
 
         application = PetsSmartHubApplication.getInstance()
 
-        auth = application.firebaseAuth()
+        auth = Firebase.auth
 
         launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)

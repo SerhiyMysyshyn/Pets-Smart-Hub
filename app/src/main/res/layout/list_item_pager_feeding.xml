@@ -50,12 +50,21 @@
                             android:translationZ="1dp"
                             android:orientation="horizontal">
 
-                            <TextView
+
+                            <CheckBox
+                                android:id="@+id/checkBoxMonday"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginStart="15dp"
-                                android:layout_toStartOf="@+id/day1RegisteredItems"
+                                android:checked="true"
+                                android:theme="@style/MySwitch"
+                                android:text="" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_toStartOf="@id/day1RegisteredItems"
+                                android:layout_toEndOf="@+id/checkBoxMonday"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/day_1"
@@ -81,9 +90,9 @@
                                 android:layout_width="36dp"
                                 android:layout_height="36dp"
                                 android:layout_marginStart="5dp"
-                                android:layout_marginEnd="0dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
-                                android:layout_toStartOf="@+id/day1Switch"
                                 android:background="@drawable/round_button_background_10dp"
                                 android:backgroundTint="@color/transparent"
                                 android:clickable="true"
@@ -91,14 +100,6 @@
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:src="@drawable/round_add_24" />
 
-                            <Switch
-                                android:id="@+id/day1Switch"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"/>
                         </RelativeLayout>
 
                         <LinearLayout
@@ -144,11 +145,19 @@
                             android:foreground="@drawable/button_foreground_round_10dp"
                             android:orientation="horizontal">
 
-                            <TextView
+                            <CheckBox
+                                android:id="@+id/checkBoxTuesday"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginStart="15dp"
+                                android:checked="true"
+                                android:theme="@style/MySwitch"
+                                android:text="" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_toEndOf="@+id/checkBoxTuesday"
                                 android:layout_toStartOf="@+id/day2RegisteredItems"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:gravity="start|center_vertical"
@@ -175,24 +184,14 @@
                                 android:layout_width="36dp"
                                 android:layout_height="36dp"
                                 android:layout_marginStart="5dp"
-                                android:layout_marginEnd="0dp"
-                                android:layout_centerVertical="true"
-                                android:layout_toStartOf="@+id/day2Switch"
+                                android:layout_marginEnd="15dp"
+                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
                                 android:background="@drawable/round_button_background_10dp"
                                 android:backgroundTint="@color/transparent"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:src="@drawable/round_add_24" />
-
-                            <Switch
-                                android:id="@+id/day2Switch"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"/>
                         </RelativeLayout>
 
                         <LinearLayout
@@ -238,11 +237,19 @@
                             android:foreground="@drawable/button_foreground_round_10dp"
                             android:orientation="horizontal">
 
-                            <TextView
+                            <CheckBox
+                                android:id="@+id/checkBoxWednesday"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginStart="15dp"
+                                android:checked="true"
+                                android:theme="@style/MySwitch"
+                                android:text="" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_toEndOf="@+id/checkBoxWednesday"
                                 android:layout_toStartOf="@+id/day3RegisteredItems"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:gravity="start|center_vertical"
@@ -269,24 +276,14 @@
                                 android:layout_width="36dp"
                                 android:layout_height="36dp"
                                 android:layout_marginStart="5dp"
-                                android:layout_marginEnd="0dp"
-                                android:layout_centerVertical="true"
-                                android:layout_toStartOf="@+id/day3Switch"
+                                android:layout_marginEnd="15dp"
+                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
                                 android:background="@drawable/round_button_background_10dp"
                                 android:backgroundTint="@color/transparent"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:src="@drawable/round_add_24" />
-
-                            <Switch
-                                android:id="@+id/day3Switch"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"/>
                         </RelativeLayout>
 
                         <LinearLayout
@@ -332,11 +329,19 @@
                             android:foreground="@drawable/button_foreground_round_10dp"
                             android:orientation="horizontal">
 
-                            <TextView
+                            <CheckBox
+                                android:id="@+id/checkBoxThursday"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginStart="15dp"
+                                android:checked="true"
+                                android:theme="@style/MySwitch"
+                                android:text="" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_toEndOf="@+id/checkBoxThursday"
                                 android:layout_toStartOf="@+id/day4RegisteredItems"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:gravity="start|center_vertical"
@@ -363,24 +368,14 @@
                                 android:layout_width="36dp"
                                 android:layout_height="36dp"
                                 android:layout_marginStart="5dp"
-                                android:layout_marginEnd="0dp"
-                                android:layout_centerVertical="true"
-                                android:layout_toStartOf="@+id/day4Switch"
+                                android:layout_marginEnd="15dp"
+                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
                                 android:background="@drawable/round_button_background_10dp"
                                 android:backgroundTint="@color/transparent"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:src="@drawable/round_add_24" />
-
-                            <Switch
-                                android:id="@+id/day4Switch"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"/>
                         </RelativeLayout>
 
                         <LinearLayout
@@ -426,11 +421,19 @@
                             android:foreground="@drawable/button_foreground_round_10dp"
                             android:orientation="horizontal">
 
-                            <TextView
+                            <CheckBox
+                                android:id="@+id/checkBoxFriday"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginStart="15dp"
+                                android:checked="true"
+                                android:theme="@style/MySwitch"
+                                android:text="" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_toEndOf="@+id/checkBoxFriday"
                                 android:layout_toStartOf="@+id/day5RegisteredItems"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:gravity="start|center_vertical"
@@ -457,24 +460,14 @@
                                 android:layout_width="36dp"
                                 android:layout_height="36dp"
                                 android:layout_marginStart="5dp"
-                                android:layout_marginEnd="0dp"
-                                android:layout_centerVertical="true"
-                                android:layout_toStartOf="@+id/day5Switch"
+                                android:layout_marginEnd="15dp"
+                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
                                 android:background="@drawable/round_button_background_10dp"
                                 android:backgroundTint="@color/transparent"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:src="@drawable/round_add_24" />
-
-                            <Switch
-                                android:id="@+id/day5Switch"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"/>
                         </RelativeLayout>
 
                         <LinearLayout
@@ -520,11 +513,19 @@
                             android:foreground="@drawable/button_foreground_round_10dp"
                             android:orientation="horizontal">
 
-                            <TextView
+                            <CheckBox
+                                android:id="@+id/checkBoxSaturday"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginStart="15dp"
+                                android:checked="true"
+                                android:theme="@style/MySwitch"
+                                android:text="" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_toEndOf="@+id/checkBoxSaturday"
                                 android:layout_toStartOf="@+id/day6RegisteredItems"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:gravity="start|center_vertical"
@@ -551,24 +552,14 @@
                                 android:layout_width="36dp"
                                 android:layout_height="36dp"
                                 android:layout_marginStart="5dp"
-                                android:layout_marginEnd="0dp"
-                                android:layout_centerVertical="true"
-                                android:layout_toStartOf="@+id/day6Switch"
+                                android:layout_marginEnd="15dp"
+                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
                                 android:background="@drawable/round_button_background_10dp"
                                 android:backgroundTint="@color/transparent"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:src="@drawable/round_add_24" />
-
-                            <Switch
-                                android:id="@+id/day6Switch"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"/>
                         </RelativeLayout>
 
                         <LinearLayout
@@ -614,11 +605,19 @@
                             android:foreground="@drawable/button_foreground_round_10dp"
                             android:orientation="horizontal">
 
-                            <TextView
+                            <CheckBox
+                                android:id="@+id/checkBoxSunday"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginStart="15dp"
+                                android:checked="true"
+                                android:theme="@style/MySwitch"
+                                android:text="" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_toEndOf="@+id/checkBoxSunday"
                                 android:layout_toStartOf="@+id/day7RegisteredItems"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:gravity="start|center_vertical"
@@ -645,24 +644,14 @@
                                 android:layout_width="36dp"
                                 android:layout_height="36dp"
                                 android:layout_marginStart="5dp"
-                                android:layout_marginEnd="0dp"
-                                android:layout_centerVertical="true"
-                                android:layout_toStartOf="@+id/day7Switch"
+                                android:layout_marginEnd="15dp"
+                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
                                 android:background="@drawable/round_button_background_10dp"
                                 android:backgroundTint="@color/transparent"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:foreground="@drawable/button_foreground_round_50dp"
                                 android:src="@drawable/round_add_24" />
-
-                            <Switch
-                                android:id="@+id/day7Switch"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"/>
                         </RelativeLayout>
 
                         <LinearLayout

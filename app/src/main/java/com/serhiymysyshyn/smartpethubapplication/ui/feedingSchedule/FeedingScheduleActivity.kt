@@ -1,37 +1,33 @@
 package com.serhiymysyshyn.smartpethubapplication.ui.feedingSchedule
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
-import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication
+import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication.Companion.appComponent
 import com.serhiymysyshyn.smartpethubapplication.R
-import com.serhiymysyshyn.smartpethubapplication.cache.sharedPreferences.PrefsManager
 import com.serhiymysyshyn.smartpethubapplication.databinding.ActivityFeedingScheduleBinding
 import com.serhiymysyshyn.smartpethubapplication.logic.adapters.FeedingScheduleAdapter
-import com.serhiymysyshyn.smartpethubapplication.logic.adapters.FeedingTimeAdapter
 import com.serhiymysyshyn.smartpethubapplication.logic.entities.FeedingHour
-import com.serhiymysyshyn.smartpethubapplication.ui.login.LoginActivity
+import javax.inject.Inject
 
-class FeedingScheduleActivity : AppCompatActivity() {
+class FeedingScheduleActivity : AppCompatActivity(), FeedingSchedule {
+
+    @Inject
+    lateinit var viewModel: FeedingScheduleViewModel
 
     private lateinit var binding: ActivityFeedingScheduleBinding
-    private lateinit var viewModel: FeedingScheduleViewModel
     private lateinit var customPagerAdapter: FeedingScheduleAdapter
     private var feedingScheduleListLastCopy = listOf<FeedingHour>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        appComponent.inject(this)
+
         binding = ActivityFeedingScheduleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        PetsSmartHubApplication.getInstance().setFeedingScheduleActivity(this@FeedingScheduleActivity)
-
-        viewModel = ViewModelProvider(this@FeedingScheduleActivity).get(FeedingScheduleViewModel::class.java)
-
-        customPagerAdapter = FeedingScheduleAdapter()
+        customPagerAdapter = FeedingScheduleAdapter(supportFragmentManager)
         binding.feedingScheduleViewPager.adapter = customPagerAdapter
 
         viewModel.getFeedingSchedule()
@@ -72,9 +68,7 @@ class FeedingScheduleActivity : AppCompatActivity() {
         })
     }
 
-
-
-    fun addNewScheduleItem(scheduleItem: FeedingHour) {
+    override fun addNewScheduleItem(scheduleItem: FeedingHour) {
         viewModel.addNewItemToCurrentList(scheduleItem)
     }
 }

@@ -61,9 +61,27 @@
             android:paddingRight="16dp"
             android:fontFamily="@font/montserrat_black"
             android:textAllCaps="true"/>
-
-
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/skipGreetingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/montserrat_black"
+        android:foreground="@drawable/button_foreground_round_10dp"
+        android:padding="15dp"
+        android:text="@string/skip_string"
+        android:textAllCaps="true"
+        android:textColor="@color/black_text"
+        android:textSize="16sp" />
 
 
 </RelativeLayout>

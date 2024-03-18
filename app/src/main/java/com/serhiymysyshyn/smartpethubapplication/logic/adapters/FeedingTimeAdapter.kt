@@ -9,42 +9,46 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication
+import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication.Companion.appComponent
 import com.serhiymysyshyn.smartpethubapplication.R
 import com.serhiymysyshyn.smartpethubapplication.logic.entities.FeedingHour
+import javax.inject.Inject
 
 class FeedingTimeAdapter internal constructor(dataList: List<FeedingHour>, dayOfWeek: Int) :
     RecyclerView.Adapter<FeedingTimeAdapter.ViewHolder>() {
 
+    @Inject
+    lateinit var applicationContext: PetsSmartHubApplication
+
     private var listOfHours: List<FeedingHour> = dataList
     private var dayOfWeek = dayOfWeek
-    private lateinit var requiredContext: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v: View = LayoutInflater.from(parent.context).inflate(R.layout.hour_info_list_item, parent, false)
+        appComponent.inject(this@FeedingTimeAdapter)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        requiredContext = PetsSmartHubApplication.getInstance()
-
         holder.hourField.text = listOfHours[position].feedingTimeHour
         holder.minuteField.text = listOfHours[position].feedingTimeMinute
         if (listOfHours[position].feedingType.equals("D")) {
-            holder.foodType.background = requiredContext.getDrawable(R.drawable.baseline_feeding_24)
+            holder.foodType.background = applicationContext.getDrawable(R.drawable.baseline_feeding_24)
             holder.foodCapacity.text = listOfHours[position].foodCapacity.toString()
             holder.foodCapacityType.text = "g"
         }
 
         if (listOfHours[position].feedingType.equals("W")) {
-            holder.foodType.background = requiredContext.getDrawable(R.drawable.baseline_water_drop_24)
+            holder.foodType.background = applicationContext.getDrawable(R.drawable.baseline_water_drop_24)
             holder.foodCapacity.text = listOfHours[position].foodCapacity.toString()
             holder.foodCapacityType.text = "ml"
         }
 
         holder.deleteCurrentHourButton.setOnClickListener {
-             //deleteScheduleItem(dayOfWeek, position)
+            //deleteScheduleItem(dayOfWeek, position)
         }
     }
 

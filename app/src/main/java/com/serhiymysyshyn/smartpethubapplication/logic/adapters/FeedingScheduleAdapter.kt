@@ -1,29 +1,31 @@
 package com.serhiymysyshyn.smartpethubapplication.logic.adapters
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication
+import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication.Companion.appComponent
 import com.serhiymysyshyn.smartpethubapplication.R
 import com.serhiymysyshyn.smartpethubapplication.logic.entities.FeedingHour
-import com.serhiymysyshyn.smartpethubapplication.ui.feedingSchedule.FeedingScheduleActivity
 import com.serhiymysyshyn.smartpethubapplication.ui.feedingSchedule.SetFeedingTimeBottomSheetFragment
-import java.util.Arrays
 import javax.inject.Inject
 
-class FeedingScheduleAdapter internal constructor() :
-    RecyclerView.Adapter<FeedingScheduleAdapter.ViewHolder>() {
+class FeedingScheduleAdapter(private val fragmentManager: FragmentManager) : RecyclerView.Adapter<FeedingScheduleAdapter.ViewHolder>() {
+
+    @Inject
+    lateinit var application: PetsSmartHubApplication
 
     private var hourList: List<FeedingHour> = ArrayList()
-    private val requiredContext: Context = PetsSmartHubApplication.getInstance()
-    private val parentActivity: FeedingScheduleActivity = PetsSmartHubApplication.getInstance().getFeedingScheduleActivity()
+
+    init {
+        appComponent.inject(this)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v: View = LayoutInflater.from(parent.context).inflate(R.layout.list_item_pager_feeding, parent, false)
@@ -72,13 +74,13 @@ class FeedingScheduleAdapter internal constructor() :
             }
         }
 
-        val vlm1 = LinearLayoutManager(requiredContext, LinearLayoutManager.VERTICAL, false)
-        val vlm2 = LinearLayoutManager(requiredContext, LinearLayoutManager.VERTICAL, false)
-        val vlm3 = LinearLayoutManager(requiredContext, LinearLayoutManager.VERTICAL, false)
-        val vlm4 = LinearLayoutManager(requiredContext, LinearLayoutManager.VERTICAL, false)
-        val vlm5 = LinearLayoutManager(requiredContext, LinearLayoutManager.VERTICAL, false)
-        val vlm6 = LinearLayoutManager(requiredContext, LinearLayoutManager.VERTICAL, false)
-        val vlm7 = LinearLayoutManager(requiredContext, LinearLayoutManager.VERTICAL, false)
+        val vlm1 = LinearLayoutManager(application.applicationContext, LinearLayoutManager.VERTICAL, false)
+        val vlm2 = LinearLayoutManager(application.applicationContext, LinearLayoutManager.VERTICAL, false)
+        val vlm3 = LinearLayoutManager(application.applicationContext, LinearLayoutManager.VERTICAL, false)
+        val vlm4 = LinearLayoutManager(application.applicationContext, LinearLayoutManager.VERTICAL, false)
+        val vlm5 = LinearLayoutManager(application.applicationContext, LinearLayoutManager.VERTICAL, false)
+        val vlm6 = LinearLayoutManager(application.applicationContext, LinearLayoutManager.VERTICAL, false)
+        val vlm7 = LinearLayoutManager(application.applicationContext, LinearLayoutManager.VERTICAL, false)
 
         holder.mondayRecyclerView.layoutManager = vlm1
         holder.tuesdayRecyclerView.layoutManager = vlm2
@@ -126,7 +128,7 @@ class FeedingScheduleAdapter internal constructor() :
 
     private fun showFeedingTimeBottomSheetDialog(dayOfWeek: Int, foodType: Int) {
         val bottomSheetFragment = SetFeedingTimeBottomSheetFragment.newInstance(dayOfWeek, foodType)
-        bottomSheetFragment.show(parentActivity.supportFragmentManager, "FeedingTimeBottomSheetDialog")
+        bottomSheetFragment.show(fragmentManager, "FeedingTimeBottomSheetDialog")
     }
 
     private fun setClickListenersForDayElements(holder: ViewHolder, position: Int) {

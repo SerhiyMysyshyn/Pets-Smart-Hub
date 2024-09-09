@@ -20,4 +20,18 @@
         <item>@string/schedule_water</item>
     </string-array>
 
+    <string-array name="notificationSortValues">
+        <item>@string/sort_show_default</item>
+        <item>@string/sort_show_new_one_first</item>
+        <item>@string/sort_show_old_one_first</item>
+    </string-array>
+
+    <string-array name="notificationTypeValues">
+        <item>@string/show_type_all</item>
+        <item>@string/show_type_recommendation</item>
+        <item>@string/show_type_news</item>
+        <item>@string/show_type_hub_notification</item>
+        <item>@string/show_type_hub_error_notification</item>
+    </string-array>
+
 </resources>

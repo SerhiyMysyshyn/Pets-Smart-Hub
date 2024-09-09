@@ -5,680 +5,675 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="15dp"
-        app:cardBackgroundColor="@color/main_background_light"
-        android:layout_centerInParent="true">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <ScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
                     android:orientation="vertical">
 
-                    <LinearLayout
+                    <RelativeLayout
+                        android:id="@+id/mondayContainer"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="vertical">
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@drawable/round_button_background_10dp"
+                        android:backgroundTint="@color/button_white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/button_foreground_round_10dp"
+                        android:orientation="horizontal"
+                        android:translationZ="1dp">
 
-                        <RelativeLayout
-                            android:id="@+id/mondayContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/actionBarSize"
+
+                        <CheckBox
+                            android:id="@+id/checkBoxMonday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:checked="true"
+                            android:text=""
+                            android:theme="@style/MySwitch" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toStartOf="@id/day1RegisteredItems"
+                            android:layout_toEndOf="@+id/checkBoxMonday"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/day_1"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/day1RegisteredItems"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_toStartOf="@+id/day1AddButton"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="(0)"
+                            android:textAllCaps="true"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/day1AddButton"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="15dp"
                             android:background="@drawable/round_button_background_10dp"
-                            android:backgroundTint="@color/button_white"
+                            android:backgroundTint="@color/transparent"
                             android:clickable="true"
                             android:focusable="true"
-                            android:foreground="@drawable/button_foreground_round_10dp"
-                            android:translationZ="1dp"
-                            android:orientation="horizontal">
+                            android:foreground="@drawable/button_foreground_round_50dp"
+                            android:src="@drawable/round_add_24" />
 
-
-                            <CheckBox
-                                android:id="@+id/checkBoxMonday"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentStart="true"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"
-                                android:text="" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_toStartOf="@id/day1RegisteredItems"
-                                android:layout_toEndOf="@+id/checkBoxMonday"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/day_1"
-                                android:textAllCaps="true"
-                                android:textColor="@color/black_text"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/day1RegisteredItems"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_toStartOf="@+id/day1AddButton"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="(0)"
-                                android:textAllCaps="true"
-                                android:textColor="@color/grey"
-                                android:textSize="16sp" />
-
-                            <ImageButton
-                                android:id="@+id/day1AddButton"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:background="@drawable/round_button_background_10dp"
-                                android:backgroundTint="@color/transparent"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="@drawable/button_foreground_round_50dp"
-                                android:src="@drawable/round_add_24" />
-
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:id="@+id/day1TimesListContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="25dp"
-                            android:layout_marginTop="-15dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:background="@drawable/round_times_list_background_10dp"
-                            android:backgroundTint="@color/dropdown_background"
-                            android:orientation="vertical">
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/day1TimesRecyclerView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:layout_marginTop="25dp"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
+                    </RelativeLayout>
 
                     <LinearLayout
+                        android:id="@+id/day1TimesListContainer"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/round_times_list_background_10dp"
+                        android:backgroundTint="@color/dropdown_background"
+                        android:minHeight="25dp"
                         android:orientation="vertical">
 
-                        <RelativeLayout
-                            android:id="@+id/tuesdayContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/actionBarSize"
-                            android:background="@drawable/round_button_background_10dp"
-                            android:backgroundTint="@color/button_white"
-                            android:translationZ="1dp"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:foreground="@drawable/button_foreground_round_10dp"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkBoxTuesday"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentStart="true"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"
-                                android:text="" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_toEndOf="@+id/checkBoxTuesday"
-                                android:layout_toStartOf="@+id/day2RegisteredItems"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/day_2"
-                                android:textAllCaps="true"
-                                android:textColor="@color/black_text"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/day2RegisteredItems"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_toStartOf="@+id/day2AddButton"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="(0)"
-                                android:textAllCaps="true"
-                                android:textColor="@color/grey"
-                                android:textSize="16sp" />
-
-                            <ImageButton
-                                android:id="@+id/day2AddButton"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
-                                android:background="@drawable/round_button_background_10dp"
-                                android:backgroundTint="@color/transparent"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="@drawable/button_foreground_round_50dp"
-                                android:src="@drawable/round_add_24" />
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:id="@+id/day2TimesListContainer"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/day1TimesRecyclerView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:minHeight="25dp"
-                            android:layout_marginTop="-15dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:background="@drawable/round_times_list_background_10dp"
-                            android:backgroundTint="@color/dropdown_background"
-                            android:orientation="vertical">
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/day2TimesRecyclerView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:layout_marginTop="25dp"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:id="@+id/wednesdayContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/actionBarSize"
-                            android:background="@drawable/round_button_background_10dp"
-                            android:backgroundTint="@color/button_white"
-                            android:translationZ="1dp"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:foreground="@drawable/button_foreground_round_10dp"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkBoxWednesday"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentStart="true"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"
-                                android:text="" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_toEndOf="@+id/checkBoxWednesday"
-                                android:layout_toStartOf="@+id/day3RegisteredItems"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/day_3"
-                                android:textAllCaps="true"
-                                android:textColor="@color/black_text"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/day3RegisteredItems"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_toStartOf="@+id/day3AddButton"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="(0)"
-                                android:textAllCaps="true"
-                                android:textColor="@color/grey"
-                                android:textSize="16sp" />
-
-                            <ImageButton
-                                android:id="@+id/day3AddButton"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
-                                android:background="@drawable/round_button_background_10dp"
-                                android:backgroundTint="@color/transparent"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="@drawable/button_foreground_round_50dp"
-                                android:src="@drawable/round_add_24" />
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:id="@+id/day3TimesListContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="25dp"
-                            android:layout_marginTop="-15dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:background="@drawable/round_times_list_background_10dp"
-                            android:backgroundTint="@color/dropdown_background"
-                            android:orientation="vertical">
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/day3TimesRecyclerView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:layout_marginTop="25dp"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:id="@+id/thursdayContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/actionBarSize"
-                            android:background="@drawable/round_button_background_10dp"
-                            android:backgroundTint="@color/button_white"
-                            android:translationZ="1dp"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:foreground="@drawable/button_foreground_round_10dp"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkBoxThursday"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentStart="true"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"
-                                android:text="" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_toEndOf="@+id/checkBoxThursday"
-                                android:layout_toStartOf="@+id/day4RegisteredItems"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/day_4"
-                                android:textAllCaps="true"
-                                android:textColor="@color/black_text"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/day4RegisteredItems"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_toStartOf="@+id/day4AddButton"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="(0)"
-                                android:textAllCaps="true"
-                                android:textColor="@color/grey"
-                                android:textSize="16sp" />
-
-                            <ImageButton
-                                android:id="@+id/day4AddButton"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
-                                android:background="@drawable/round_button_background_10dp"
-                                android:backgroundTint="@color/transparent"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="@drawable/button_foreground_round_50dp"
-                                android:src="@drawable/round_add_24" />
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:id="@+id/day4TimesListContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="25dp"
-                            android:layout_marginTop="-15dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:background="@drawable/round_times_list_background_10dp"
-                            android:backgroundTint="@color/dropdown_background"
-                            android:orientation="vertical">
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/day4TimesRecyclerView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:layout_marginTop="25dp"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:id="@+id/fridayContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/actionBarSize"
-                            android:background="@drawable/round_button_background_10dp"
-                            android:backgroundTint="@color/button_white"
-                            android:translationZ="1dp"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:foreground="@drawable/button_foreground_round_10dp"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkBoxFriday"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentStart="true"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"
-                                android:text="" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_toEndOf="@+id/checkBoxFriday"
-                                android:layout_toStartOf="@+id/day5RegisteredItems"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/day_5"
-                                android:textAllCaps="true"
-                                android:textColor="@color/black_text"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/day5RegisteredItems"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_toStartOf="@+id/day5AddButton"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="(0)"
-                                android:textAllCaps="true"
-                                android:textColor="@color/grey"
-                                android:textSize="16sp" />
-
-                            <ImageButton
-                                android:id="@+id/day5AddButton"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
-                                android:background="@drawable/round_button_background_10dp"
-                                android:backgroundTint="@color/transparent"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="@drawable/button_foreground_round_50dp"
-                                android:src="@drawable/round_add_24" />
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:id="@+id/day5TimesListContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="25dp"
-                            android:layout_marginTop="-15dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:background="@drawable/round_times_list_background_10dp"
-                            android:backgroundTint="@color/dropdown_background"
-                            android:orientation="vertical">
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/day5TimesRecyclerView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:layout_marginTop="25dp"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:id="@+id/saturdayContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/actionBarSize"
-                            android:background="@drawable/round_button_background_10dp"
-                            android:backgroundTint="@color/button_white"
-                            android:translationZ="1dp"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:foreground="@drawable/button_foreground_round_10dp"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkBoxSaturday"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentStart="true"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"
-                                android:text="" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_toEndOf="@+id/checkBoxSaturday"
-                                android:layout_toStartOf="@+id/day6RegisteredItems"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/day_6"
-                                android:textAllCaps="true"
-                                android:textColor="@color/black_text"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/day6RegisteredItems"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_toStartOf="@+id/day6AddButton"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="(0)"
-                                android:textAllCaps="true"
-                                android:textColor="@color/grey"
-                                android:textSize="16sp" />
-
-                            <ImageButton
-                                android:id="@+id/day6AddButton"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
-                                android:background="@drawable/round_button_background_10dp"
-                                android:backgroundTint="@color/transparent"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="@drawable/button_foreground_round_50dp"
-                                android:src="@drawable/round_add_24" />
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:id="@+id/day6TimesListContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="25dp"
-                            android:layout_marginTop="-15dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:background="@drawable/round_times_list_background_10dp"
-                            android:backgroundTint="@color/dropdown_background"
-                            android:orientation="vertical">
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/day6TimesRecyclerView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:layout_marginTop="25dp"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:id="@+id/sundayContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/actionBarSize"
-                            android:background="@drawable/round_button_background_10dp"
-                            android:backgroundTint="@color/button_white"
-                            android:translationZ="1dp"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:foreground="@drawable/button_foreground_round_10dp"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:id="@+id/checkBoxSunday"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentStart="true"
-                                android:checked="true"
-                                android:theme="@style/MySwitch"
-                                android:text="" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_toEndOf="@+id/checkBoxSunday"
-                                android:layout_toStartOf="@+id/day7RegisteredItems"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/day_7"
-                                android:textAllCaps="true"
-                                android:textColor="@color/black_text"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/day7RegisteredItems"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_toStartOf="@+id/day7AddButton"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="(0)"
-                                android:textAllCaps="true"
-                                android:textColor="@color/grey"
-                                android:textSize="16sp" />
-
-                            <ImageButton
-                                android:id="@+id/day7AddButton"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_alignParentEnd="true"                                android:layout_centerVertical="true"
-                                android:background="@drawable/round_button_background_10dp"
-                                android:backgroundTint="@color/transparent"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="@drawable/button_foreground_round_50dp"
-                                android:src="@drawable/round_add_24" />
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:id="@+id/day7TimesListContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="25dp"
-                            android:layout_marginTop="-15dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:background="@drawable/round_times_list_background_10dp"
-                            android:backgroundTint="@color/dropdown_background"
-                            android:orientation="vertical">
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/day7TimesRecyclerView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:layout_marginTop="25dp"/>
-                        </LinearLayout>
-
+                            android:layout_marginTop="25dp"
+                            android:visibility="visible" />
                     </LinearLayout>
 
                 </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/tuesdayContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@drawable/round_button_background_10dp"
+                        android:backgroundTint="@color/button_white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/button_foreground_round_10dp"
+                        android:orientation="horizontal"
+                        android:translationZ="1dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxTuesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:checked="true"
+                            android:text=""
+                            android:theme="@style/MySwitch" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toStartOf="@+id/day2RegisteredItems"
+                            android:layout_toEndOf="@+id/checkBoxTuesday"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/day_2"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/day2RegisteredItems"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_toStartOf="@+id/day2AddButton"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="(0)"
+                            android:textAllCaps="true"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/day2AddButton"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/round_button_background_10dp"
+                            android:backgroundTint="@color/transparent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/button_foreground_round_50dp"
+                            android:src="@drawable/round_add_24" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/day2TimesListContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/round_times_list_background_10dp"
+                        android:backgroundTint="@color/dropdown_background"
+                        android:minHeight="25dp"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/day2TimesRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/wednesdayContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@drawable/round_button_background_10dp"
+                        android:backgroundTint="@color/button_white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/button_foreground_round_10dp"
+                        android:orientation="horizontal"
+                        android:translationZ="1dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxWednesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:checked="true"
+                            android:text=""
+                            android:theme="@style/MySwitch" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toStartOf="@+id/day3RegisteredItems"
+                            android:layout_toEndOf="@+id/checkBoxWednesday"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/day_3"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/day3RegisteredItems"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_toStartOf="@+id/day3AddButton"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="(0)"
+                            android:textAllCaps="true"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/day3AddButton"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/round_button_background_10dp"
+                            android:backgroundTint="@color/transparent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/button_foreground_round_50dp"
+                            android:src="@drawable/round_add_24" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/day3TimesListContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/round_times_list_background_10dp"
+                        android:backgroundTint="@color/dropdown_background"
+                        android:minHeight="25dp"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/day3TimesRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/thursdayContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@drawable/round_button_background_10dp"
+                        android:backgroundTint="@color/button_white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/button_foreground_round_10dp"
+                        android:orientation="horizontal"
+                        android:translationZ="1dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxThursday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:checked="true"
+                            android:text=""
+                            android:theme="@style/MySwitch" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toStartOf="@+id/day4RegisteredItems"
+                            android:layout_toEndOf="@+id/checkBoxThursday"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/day_4"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/day4RegisteredItems"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_toStartOf="@+id/day4AddButton"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="(0)"
+                            android:textAllCaps="true"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/day4AddButton"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/round_button_background_10dp"
+                            android:backgroundTint="@color/transparent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/button_foreground_round_50dp"
+                            android:src="@drawable/round_add_24" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/day4TimesListContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/round_times_list_background_10dp"
+                        android:backgroundTint="@color/dropdown_background"
+                        android:minHeight="25dp"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/day4TimesRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/fridayContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@drawable/round_button_background_10dp"
+                        android:backgroundTint="@color/button_white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/button_foreground_round_10dp"
+                        android:orientation="horizontal"
+                        android:translationZ="1dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxFriday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:checked="true"
+                            android:text=""
+                            android:theme="@style/MySwitch" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toStartOf="@+id/day5RegisteredItems"
+                            android:layout_toEndOf="@+id/checkBoxFriday"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/day_5"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/day5RegisteredItems"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_toStartOf="@+id/day5AddButton"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="(0)"
+                            android:textAllCaps="true"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/day5AddButton"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/round_button_background_10dp"
+                            android:backgroundTint="@color/transparent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/button_foreground_round_50dp"
+                            android:src="@drawable/round_add_24" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/day5TimesListContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/round_times_list_background_10dp"
+                        android:backgroundTint="@color/dropdown_background"
+                        android:minHeight="25dp"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/day5TimesRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/saturdayContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@drawable/round_button_background_10dp"
+                        android:backgroundTint="@color/button_white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/button_foreground_round_10dp"
+                        android:orientation="horizontal"
+                        android:translationZ="1dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxSaturday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:checked="true"
+                            android:text=""
+                            android:theme="@style/MySwitch" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toStartOf="@+id/day6RegisteredItems"
+                            android:layout_toEndOf="@+id/checkBoxSaturday"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/day_6"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/day6RegisteredItems"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_toStartOf="@+id/day6AddButton"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="(0)"
+                            android:textAllCaps="true"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/day6AddButton"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/round_button_background_10dp"
+                            android:backgroundTint="@color/transparent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/button_foreground_round_50dp"
+                            android:src="@drawable/round_add_24" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/day6TimesListContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/round_times_list_background_10dp"
+                        android:backgroundTint="@color/dropdown_background"
+                        android:minHeight="25dp"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/day6TimesRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/sundayContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@drawable/round_button_background_10dp"
+                        android:backgroundTint="@color/button_white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/button_foreground_round_10dp"
+                        android:orientation="horizontal"
+                        android:translationZ="1dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxSunday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:checked="true"
+                            android:text=""
+                            android:theme="@style/MySwitch" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toStartOf="@+id/day7RegisteredItems"
+                            android:layout_toEndOf="@+id/checkBoxSunday"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/day_7"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/day7RegisteredItems"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_toStartOf="@+id/day7AddButton"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="start|center_vertical"
+                            android:text="(0)"
+                            android:textAllCaps="true"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/day7AddButton"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/round_button_background_10dp"
+                            android:backgroundTint="@color/transparent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/button_foreground_round_50dp"
+                            android:src="@drawable/round_add_24" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/day7TimesListContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/round_times_list_background_10dp"
+                        android:backgroundTint="@color/dropdown_background"
+                        android:minHeight="25dp"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/day7TimesRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
 </RelativeLayout>

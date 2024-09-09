@@ -1,12 +1,15 @@
 package com.serhiymysyshyn.smartpethubapplication.ui.feedingSchedule
 
+import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.serhiymysyshyn.smartpethubapplication.R
 import com.serhiymysyshyn.smartpethubapplication.databinding.FragmentSetFeedingTimeBottomSheetBinding
 import com.serhiymysyshyn.smartpethubapplication.logic.entities.FeedingHour
 import java.time.LocalDateTime
@@ -42,6 +45,11 @@ class SetFeedingTimeBottomSheetFragment : BottomSheetDialogFragment() {
             param1 = it.getInt(ARG_PARAM1)
             param2 = it.getInt(ARG_PARAM2)
         }
+    }
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        setStyle(STYLE_NO_FRAME, R.style.CustomBottomSheetDialogTheme)
+        return BottomSheetDialog(requireContext(), theme)
     }
 
     override fun onCreateView(

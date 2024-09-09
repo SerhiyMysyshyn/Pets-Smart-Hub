@@ -18,10 +18,19 @@ class HubCameraActivity : AppCompatActivity() {
 
         val webSettings: WebSettings = binding.hubCameraWebView.settings
         webSettings.javaScriptEnabled = true
-        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH)
-        //webSettings.useWideViewPort = true;
-        //webSettings.builtInZoomControls = true
+        webSettings.useWideViewPort = true;
+        webSettings.builtInZoomControls = true
+        webSettings.displayZoomControls = false
+        webSettings.setSupportZoom(true)
+
+        binding.hubCameraWebView.post {
+            val zoomScale = 100 // Відсоток масштабу (у відсотках від 100%)
+            binding.hubCameraWebView.setInitialScale(zoomScale)
+        }
+
         binding.hubCameraWebView.loadUrl("http://192.168.0.189:81/stream")
+
+
 
         binding.backButton.setOnClickListener {
             // Additional code here

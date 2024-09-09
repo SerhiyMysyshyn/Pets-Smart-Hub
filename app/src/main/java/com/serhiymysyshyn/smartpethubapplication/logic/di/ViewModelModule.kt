@@ -3,10 +3,12 @@ package com.serhiymysyshyn.smartpethubapplication.logic.di
 import com.serhiymysyshyn.smartpethubapplication.PetsSmartHubApplication
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.FeedingScheduleRepository
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.HomeRepository
+import com.serhiymysyshyn.smartpethubapplication.logic.repositories.NotificationRepository
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.ProfileRepository
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.SplashScreenRepository
 import com.serhiymysyshyn.smartpethubapplication.ui.feedingSchedule.FeedingScheduleViewModel
 import com.serhiymysyshyn.smartpethubapplication.ui.home.HomeViewModel
+import com.serhiymysyshyn.smartpethubapplication.ui.notification.NotificationViewModel
 import com.serhiymysyshyn.smartpethubapplication.ui.profile.ProfileViewModel
 import com.serhiymysyshyn.smartpethubapplication.ui.splash.SplashViewModel
 import dagger.Module
@@ -32,6 +34,11 @@ class ViewModelModule {
     @Provides
     fun provideHomeViewModel(homeRepository: HomeRepository): HomeViewModel {
         return HomeViewModel(homeRepository)
+    }
+
+    @Provides
+    fun provideNotificationViewModel(notificationRepository: NotificationRepository): NotificationViewModel {
+        return NotificationViewModel(notificationRepository)
     }
 
     @Provides

@@ -5,6 +5,7 @@ import com.serhiymysyshyn.smartpethubapplication.cache.sharedPreferences.PrefsMa
 import com.serhiymysyshyn.smartpethubapplication.logic.authentication.FirebaseAuthImpl
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.FeedingScheduleRepository
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.HomeRepository
+import com.serhiymysyshyn.smartpethubapplication.logic.repositories.NotificationRepository
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.ProfileRepository
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.SplashScreenRepository
 import dagger.Module
@@ -35,5 +36,10 @@ class RepositoriesModule {
     @Provides
     fun provideProfileRepository(firebaseAuthImpl: FirebaseAuthImpl): ProfileRepository {
         return ProfileRepository(firebaseAuthImpl)
+    }
+
+    @Provides
+    fun provideNotificationRepository(application: PetsSmartHubApplication, sharedPreferences: PrefsManager): NotificationRepository {
+        return NotificationRepository(application, sharedPreferences)
     }
 }

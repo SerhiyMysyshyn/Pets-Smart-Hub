@@ -3,9 +3,12 @@ package com.serhiymysyshyn.smartpethubapplication.logic.di
 import com.serhiymysyshyn.smartpethubapplication.cache.sharedPreferences.PrefsManager
 import com.serhiymysyshyn.smartpethubapplication.logic.adapters.FeedingScheduleAdapter
 import com.serhiymysyshyn.smartpethubapplication.logic.adapters.FeedingTimeAdapter
+import com.serhiymysyshyn.smartpethubapplication.logic.adapters.NotificationItemTypeAdapter
+import com.serhiymysyshyn.smartpethubapplication.logic.adapters.NotificationSortAdapter
 import com.serhiymysyshyn.smartpethubapplication.logic.authentication.FirebaseAuthImpl
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.FeedingScheduleRepository
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.HomeRepository
+import com.serhiymysyshyn.smartpethubapplication.logic.repositories.NotificationRepository
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.ProfileRepository
 import com.serhiymysyshyn.smartpethubapplication.logic.repositories.SplashScreenRepository
 import com.serhiymysyshyn.smartpethubapplication.ui.feedingSchedule.FeedingScheduleActivity
@@ -38,6 +41,8 @@ interface AppComponent {
     fun inject(splashActivity: SplashActivity)
     fun inject(feedingScheduleActivity: FeedingScheduleActivity)
 
+
+
     // Fragments
     fun inject(setFeedingTimeBottomSheetFragment: SetFeedingTimeBottomSheetFragment)
     fun inject(profileFragment: ProfileFragment)
@@ -62,6 +67,7 @@ interface AppComponent {
     fun inject(feedingScheduleRepository: FeedingScheduleRepository)
     fun inject(profileRepository: ProfileRepository)
     fun inject(homeRepository: HomeRepository)
+    fun inject(notificationRepository: NotificationRepository)
 
 
 
@@ -70,4 +76,6 @@ interface AppComponent {
     fun inject(feedingScheduleAdapter: FeedingScheduleAdapter)
     fun inject(feedingTimeAdapter: FeedingTimeAdapter)
     fun inject(firebaseAuthImpl: FirebaseAuthImpl)
+    fun inject(notificationItemTypeAdapter: NotificationItemTypeAdapter)
+    fun inject(notificationSortAdapter: NotificationSortAdapter)
 }

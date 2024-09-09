@@ -18,7 +18,7 @@
         android:layout_marginBottom="15dp"
         android:layout_below="@+id/hubCameraBar"
         android:layout_above="@+id/hubCameraButtons"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="15dp">
 
         <WebView
@@ -124,11 +124,12 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:fontFamily="@font/montserrat_medium"
+            android:fontFamily="@font/montserrat_black"
+            android:textSize="16sp"
             android:gravity="center"
             android:singleLine="true"
             android:textColor="@color/black_text"
-            android:text="Connecting to Hub camera..." />
+            android:text="Connecting..." />
 
         <TextView
             android:id="@+id/additionalCameraInfo"

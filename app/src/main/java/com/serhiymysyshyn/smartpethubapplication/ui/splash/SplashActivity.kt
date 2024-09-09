@@ -40,6 +40,8 @@ class SplashActivity : AppCompatActivity() {
         mTimerTask = MyTimerTask(viewModel)
         timer.schedule(mTimerTask, 500)
 
+        //startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+
         viewModel.isFirstLaunch.observe(this@SplashActivity) {
             if (!it) {
                 if (Firebase.auth.currentUser != null) {

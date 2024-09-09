@@ -78,6 +78,19 @@
 
     <string name="error_string">Oops,\nsomething went wrong...</string>
 
+    <string name="show_sort_title">Choose notification sort type</string>
+    <string name="sort_show_default">Default sorting</string>
+    <string name="sort_show_new_one_first">New ones first</string>
+    <string name="sort_show_old_one_first">Old ones first</string>
+
+    <string name="show_type_title">Choose notification type to show</string>
+    <string name="show_type_all">All notifications</string>
+    <string name="show_type_recommendation">Recommendations only</string>
+    <string name="show_type_news">News only</string>
+    <string name="show_type_hub_notification">Smart Hub notifications only</string>
+    <string name="show_type_hub_error_notification">Smart Hub errors only</string>
+
+
     <!-- Greeting activity data -->
     <string name="welcome_to_app">Welcome to Smart Hub</string>
     <string name="smart_hub_reliable_friend">Smart HUB - your reliable friend</string>
